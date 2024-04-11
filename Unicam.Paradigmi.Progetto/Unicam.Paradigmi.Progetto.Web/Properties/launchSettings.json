@@ -9,14 +9,24 @@
     }
   },
   "profiles": {
-    "Unicam.Paradigmi.Progetto.Web": {
+    "Unicam.Paradigmi.Web - Development": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7287;http://localhost:5013",
+      "applicationUrl": "https://localhost:7109;http://localhost:5088",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Unicam.Paradigmi.Web - Production": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:7109;http://localhost:5088",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
       }
     },
     "IIS Express": {
