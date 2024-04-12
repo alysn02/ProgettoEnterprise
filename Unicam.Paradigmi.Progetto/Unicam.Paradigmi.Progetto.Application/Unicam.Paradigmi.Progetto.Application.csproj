@@ -4,6 +4,11 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Unicam.Paradigmi.Progetto.Models\Unicam.Paradigmi.Progetto.Models.csproj" />
+  </ItemGroup>
 
 </Project>

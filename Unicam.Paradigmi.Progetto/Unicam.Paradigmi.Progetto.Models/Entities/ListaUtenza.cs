@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Unicam.Paradigmi.Progetto.Models.Entities
 {
-    public class ListaUtenze
+    public class ListaUtenza
     {
+        public int IdUtenza { get; set; }
         public string Nome { get; set; } = string.Empty;
         public string EmailProprietario { get; set; } = string.Empty;
-        public List<Utente> Destinatari { get; set; } = new List<Utente>();
+        public virtual Utente Proprietario { get; set; }
 
-        public virtual Utente Proprietario { get; set; } = null!;
+        public virtual ICollection<Destinatari> EmailDestinatarie { get; set; }
     }
 }

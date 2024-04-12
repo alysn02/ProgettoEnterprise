@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "Unicam.Paradigmi.Web - Development": {
+    "Unicam.Paradigmi.Progetto.Web - Development": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
@@ -19,7 +19,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Unicam.Paradigmi.Web - Production": {
+    "Unicam.Paradigmi.Progetto.Web - Production": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
