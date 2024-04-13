@@ -4,6 +4,6 @@ namespace Unicam.Paradigmi.Progetto.Application.Abstractions.Services
 {
     public interface IListaUtenzaService
     {
-        void AddLista(ListaUtenza lista);
+        void AddLista(ListaDistribuzione lista);
     }
 }

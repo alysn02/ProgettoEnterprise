@@ -14,8 +14,8 @@ namespace Unicam.Paradigmi.Progetto.Models.Configurations
         public void Configure(EntityTypeBuilder<Utente> builder)
         {
             builder.ToTable("Utenti");
-            builder.HasKey(u => u.Email);
-            builder.Property(u => u.Email).IsRequired();
+            builder.HasKey(u => u.IdUtente);
+            builder.Property(u => u.IdUtente).IsRequired();
 
         }
     }

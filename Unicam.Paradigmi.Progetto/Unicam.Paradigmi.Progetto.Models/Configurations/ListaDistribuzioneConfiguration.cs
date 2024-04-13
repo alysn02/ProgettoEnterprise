@@ -9,20 +9,17 @@ using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Models.Configurations
 {
-    public class ListaUtenzaConfiguration : IEntityTypeConfiguration<ListaUtenza>
+    public class ListaDistribuzioneConfiguration : IEntityTypeConfiguration<ListaDistribuzione>
     {
-        public void Configure(EntityTypeBuilder<ListaUtenza> builder)
+        public void Configure(EntityTypeBuilder<ListaDistribuzione> builder)
         {
-            builder.ToTable("ListeUtenze");
-            builder.HasKey(u => u.IdUtenza);
-            builder.Property(u => u.IdUtenza).IsRequired();
+            builder.ToTable("ListeDistribuzioni");
+            builder.HasKey(u => u.IdLista);
+            builder.Property(u => u.IdLista).IsRequired();
 
             builder.HasOne(l => l.Proprietario)
                    .WithMany(u => u.ListeUtenze)
-                   .HasForeignKey(l => l.EmailProprietario);
-
-           
-
+                   .HasForeignKey(l => l.IdProprietario);
         }
     }
 }

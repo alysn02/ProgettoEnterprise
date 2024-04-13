@@ -18,7 +18,6 @@ namespace Unicam.Paradigmi.Progetto.Models.Repositories
         public void Aggiungi(Utente utente)
         {
             _ctx.Set<Utente>().Add(utente);
-            _ctx.Set<string>().Add(utente.Email);
             //non traccio i figli 
             //_ctx.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Added;
         }

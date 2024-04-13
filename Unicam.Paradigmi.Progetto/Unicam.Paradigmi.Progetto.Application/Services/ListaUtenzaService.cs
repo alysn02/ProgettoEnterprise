@@ -10,7 +10,7 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
         {
             _utenzaRepository = utenzaRepository;
         }
-        public void AddLista(ListaUtenza lista)
+        public void AddLista(ListaDistribuzione lista)
         {
             _utenzaRepository.Aggiungi(lista);
             _utenzaRepository.Save();

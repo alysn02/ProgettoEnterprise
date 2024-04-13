@@ -15,9 +15,9 @@ namespace Unicam.Paradigmi.Progetto.Models.Repositories
         {
             _ctx = ctx;
         }
-        public void Aggiungi(ListaUtenza lista)
+        public void Aggiungi(ListaDistribuzione lista)
         {
-            _ctx.Set<ListaUtenza>().Add(lista);
+            _ctx.Set<ListaDistribuzione>().Add(lista);
             //non traccio i figli 
             //_ctx.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Added;
         }

@@ -15,8 +15,10 @@ namespace Unicam.Paradigmi.Progetto.Models.Context
         {
 
         }
-        public DbSet<ListaUtenza> ListeUtenze { get; set; }
-        public DbSet<Utente> Utenti { get; set; } 
+        public DbSet<ListaDistribuzione> ListeUtenze { get; set; }
+        public DbSet<Utente> Utenti { get; set; }
+        public DbSet<ListaUtenzeAssociate> ListaUtenzeAssociate { get; set; }
+        public DbSet<Destinatario> Destinatari { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

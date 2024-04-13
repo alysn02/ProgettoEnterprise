@@ -5,12 +5,12 @@ namespace Unicam.Paradigmi.Progetto.Application.Models.Dtos
     public class ListaUtenzaDto
     {
         public string Nome { get; set; } = string.Empty;
-        public string EmailProprietario { get; set; } = string.Empty;
+        public int IdProprietario { get; set; }
 
-        public ListaUtenzaDto(ListaUtenza lista)
+        public ListaUtenzaDto(ListaDistribuzione lista)
         {
             Nome = lista.Nome;
-            EmailProprietario = lista.EmailProprietario;
+            IdProprietario=lista.IdProprietario;
         }
     }
 }
