@@ -18,5 +18,10 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
             _utenteRepository.Save();
         }
 
+        public Utente GetUtenteByEmail(string email)
+        {
+            return _utenteRepository.GetUtenteByEmail(email);
+        }
+
     }
 }

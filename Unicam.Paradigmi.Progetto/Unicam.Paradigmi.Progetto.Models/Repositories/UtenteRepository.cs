@@ -26,5 +26,10 @@ namespace Unicam.Paradigmi.Progetto.Models.Repositories
         {
             _ctx.SaveChanges();
         }
+
+        public Utente GetUtenteByEmail(string email)
+        {
+            return _ctx.Utenti.FirstOrDefault(x => x.Email == email);
+        }
     }
 }

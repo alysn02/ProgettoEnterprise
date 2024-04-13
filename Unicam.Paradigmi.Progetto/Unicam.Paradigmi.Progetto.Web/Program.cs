@@ -4,6 +4,8 @@ using Unicam.Paradigmi.Progetto.Application.Services;
 using Unicam.Paradigmi.Progetto.Models.Context;
 using Unicam.Paradigmi.Progetto.Models.Repositories;
 using Unicam.Paradigmi.Progetto.Models.Extensions;
+using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
+using Unicam.Paradigmi.Progetto.Web.Extensions;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +20,8 @@ builder.Services.AddScoped<UtenteService>();
 builder.Services.AddScoped<UtenteRepository>();
 builder.Services.AddScoped<ListaUtenzaService>();
 builder.Services.AddScoped<ListaUtenzaRepository>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddWebService(builder.Configuration);
 builder.Services.AddModelServices(builder.Configuration);
 
 var app = builder.Build();

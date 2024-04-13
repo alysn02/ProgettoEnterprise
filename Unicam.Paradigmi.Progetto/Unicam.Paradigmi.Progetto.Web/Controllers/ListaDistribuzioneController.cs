@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Unicam.Paradigmi.Application.Models.Dtos;
 using Unicam.Paradigmi.Application.Models.Request;
 using Unicam.Paradigmi.Application.Models.Responses;
@@ -13,13 +15,13 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
 
     [ApiController]
     [Route("api/v1/[controller]")]
-    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public class ListaUtenzaController : ControllerBase
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    public class ListaDistribuzioneController : ControllerBase
     {
         private readonly ListaUtenzaService _utenzaService;
         // List<Utente> utenti = new List<Utente>();
 
-        public ListaUtenzaController(ListaUtenzaService utenzaService)
+        public ListaDistribuzioneController(ListaUtenzaService utenzaService)
         {
             _utenzaService = utenzaService;
         }
