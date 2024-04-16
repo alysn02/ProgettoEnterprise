@@ -67,7 +67,9 @@ namespace Unicam.Paradigmi.Progetto.Web.Extensions
                         ValidIssuer = jwtAuthenticationOption.Issuer,
                         IssuerSigningKey = securityKey
                     };
-                });
+                }); services.Configure<JWTAuthOption>(
+              configuration.GetSection("JwtAuthentication")
+              );
 
             return services;
 

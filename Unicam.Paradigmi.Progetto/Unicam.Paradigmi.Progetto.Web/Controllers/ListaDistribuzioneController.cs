@@ -18,10 +18,10 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ListaDistribuzioneController : ControllerBase
     {
-        private readonly ListaUtenzaService _utenzaService;
+        private readonly ListaDistribuzioneService _utenzaService;
         // List<Utente> utenti = new List<Utente>();
 
-        public ListaDistribuzioneController(ListaUtenzaService utenzaService)
+        public ListaDistribuzioneController(ListaDistribuzioneService utenzaService)
         {
             _utenzaService = utenzaService;
         }

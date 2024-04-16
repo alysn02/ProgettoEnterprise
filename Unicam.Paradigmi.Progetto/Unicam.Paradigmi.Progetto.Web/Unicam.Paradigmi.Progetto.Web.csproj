@@ -7,13 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.28" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Extensions\" />
     <Folder Include="Results\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Unicam.Paradigmi.Progetto.Application\Unicam.Paradigmi.Progetto.Application.csproj" />
+    <ProjectReference Include="..\Unicam.Paradigmi.Progetto.Models\Unicam.Paradigmi.Progetto.Models.csproj" />
   </ItemGroup>
 
 </Project>

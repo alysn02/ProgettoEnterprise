@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "0uVj1To8xW2MNbMJ24g2ibtzxTqsM0LZ/YGohcKmVgk=",
+  "Source": "Unicam.Paradigmi.Progetto.Web",
+  "BasePath": "_content/Unicam.Paradigmi.Progetto.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj",
+      "Version": 2,
+      "Source": "Unicam.Paradigmi.Progetto.Application",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

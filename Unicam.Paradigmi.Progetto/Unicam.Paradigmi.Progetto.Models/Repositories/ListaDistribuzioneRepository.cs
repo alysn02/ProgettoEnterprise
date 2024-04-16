@@ -8,10 +8,10 @@ using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Models.Repositories
 {
-    public class ListaUtenzaRepository
+    public class ListaDistribuzioneRepository
     {
         protected MydbContext _ctx;
-        public ListaUtenzaRepository(MydbContext ctx)
+        public ListaDistribuzioneRepository(MydbContext ctx)
         {
             _ctx = ctx;
         }
@@ -26,5 +26,11 @@ namespace Unicam.Paradigmi.Progetto.Models.Repositories
         {
             _ctx.SaveChanges();
         }
+        public int GetIdFromLista(int idListaDistribuzione)
+        {
+            var lista = _ctx.ListeDistribuzioni.First(x => x.IdLista == idListaDistribuzione);
+            return lista.IdProprietario;
+        }
+
     }
 }
