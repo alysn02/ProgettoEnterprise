@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,18 @@ namespace Unicam.Paradigmi.Progetto.Models.Repositories
         {
             _ctx.SaveChanges();
         }
-        public void Add(Destinatario destinatario) {
+        public void Add(Destinatario destinatario)
+        {
             _ctx.Set<Destinatario>().Add(destinatario);
         }
         public Destinatario GetByEmail(string email)
         {
             return _ctx.Destinatari.Where(a => a.Email.ToLower() == email.ToLower()).FirstOrDefault();
+        }
+        public List<Destinatario> GetListaDestinatari(int idLista)
+        {
+            var lista = _ctx.Destinatari.Where(a => a.ListaUtenzeAssociate.Any(i => i.IdListaDistribuzione == idLista)).ToList();
+            return lista;
         }
     }
 }

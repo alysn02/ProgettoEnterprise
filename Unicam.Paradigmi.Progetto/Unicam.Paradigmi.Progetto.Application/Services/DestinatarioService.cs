@@ -23,5 +23,9 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
         { 
             return destinatarioRepository.GetByEmail(email);
         }
+         public List<Destinatario> GetDestinatari(int idListaDestinatari)
+        {
+            return destinatarioRepository.GetListaDestinatari(idListaDestinatari);
+        }
     }
 }

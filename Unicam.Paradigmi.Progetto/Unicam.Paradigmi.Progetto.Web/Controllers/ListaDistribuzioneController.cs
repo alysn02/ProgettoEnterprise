@@ -19,10 +19,11 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
     public class ListaDistribuzioneController : ControllerBase
     {
         private readonly ListaDistribuzioneService _utenzaService;
-        // List<Utente> utenti = new List<Utente>();
+        private readonly EmailServices _emailServices;
 
-        public ListaDistribuzioneController(ListaDistribuzioneService utenzaService)
+        public ListaDistribuzioneController(ListaDistribuzioneService utenzaService, EmailServices emailServices)
         {
+            _emailServices = emailServices;
             _utenzaService = utenzaService;
         }
 
@@ -38,5 +39,23 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
             response.ListaUtenza = new ListaUtenzaDto(lista);
             return Ok();
         }
+        [HttpPost]
+        [Route("messaggioLista")]
+        public IActionResult InvioEmail(InvioEmailRequest invioEmailRequest)
+        {
+            int idUtente = 0; //da fare
+            var idProprietario = _utenzaService.GetidProprietario(invioEmailRequest.IdListaDestinatari);
+            if (idProprietario.Equals(idUtente))
+            {
+                _emailServices.SendEmail(invioEmailRequest.Subject, invioEmailRequest.Body, invioEmailRequest.IdListaDestinatari);
+                /*var rispostona = new RispostonaEmail {
+                 destinatari = emailservice.destinatari(?)
+                 }*/
+                return Ok();
+            }
+
+            return BadRequest();
+        }
+
     }
 }

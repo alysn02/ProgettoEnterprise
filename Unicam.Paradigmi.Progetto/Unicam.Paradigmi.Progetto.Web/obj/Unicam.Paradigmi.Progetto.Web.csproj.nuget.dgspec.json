@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Web\\Unicam.Paradigmi.Progetto.Web.csproj": {}
+    "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Web\\Unicam.Paradigmi.Progetto.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj": {
+    "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj",
         "projectName": "Unicam.Paradigmi.Progetto.Application",
-        "projectPath": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj",
-        "packagesPath": "C:\\Users\\Famine\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\obj\\",
+        "projectPath": "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj",
+        "packagesPath": "C:\\Users\\Alice\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Famine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alice\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {
-                "projectPath": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj"
+              "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {
+                "projectPath": "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj"
               }
             }
           }
@@ -38,20 +43,23 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.11.0, )"
+            },
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[11.3.0, )"
+            },
+            "Microsoft.Graph": {
+              "target": "Package",
+              "version": "[5.31.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -77,21 +85,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {
+    "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
         "projectName": "Unicam.Paradigmi.Progetto.Models",
-        "projectPath": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
-        "packagesPath": "C:\\Users\\Famine\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\obj\\",
+        "projectPath": "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
+        "packagesPath": "C:\\Users\\Alice\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Famine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alice\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,6 +111,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -111,11 +124,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -155,21 +163,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Web\\Unicam.Paradigmi.Progetto.Web.csproj": {
+    "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Web\\Unicam.Paradigmi.Progetto.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Web\\Unicam.Paradigmi.Progetto.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Web\\Unicam.Paradigmi.Progetto.Web.csproj",
         "projectName": "Unicam.Paradigmi.Progetto.Web",
-        "projectPath": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Web\\Unicam.Paradigmi.Progetto.Web.csproj",
-        "packagesPath": "C:\\Users\\Famine\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Web\\obj\\",
+        "projectPath": "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Web\\Unicam.Paradigmi.Progetto.Web.csproj",
+        "packagesPath": "C:\\Users\\Alice\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Web\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Famine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alice\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -177,17 +189,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj": {
-                "projectPath": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj"
+              "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj": {
+                "projectPath": "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj"
               },
-              "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {
-                "projectPath": "C:\\Users\\Famine\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj"
+              "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {
+                "projectPath": "C:\\Users\\Alice\\Desktop\\SCUOLA\\Università\\3anno\\Paradigmi\\NuovoProgetto\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj"
               }
             }
           }
@@ -196,11 +209,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -239,7 +247,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

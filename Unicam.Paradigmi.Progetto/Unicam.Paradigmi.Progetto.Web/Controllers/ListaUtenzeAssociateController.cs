@@ -37,14 +37,15 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
             return Ok();
         }
 
-       /* [HttpDelete]
+        [HttpDelete]
         [Route("deleteDestinatario")]
-        public IActionResult DeleteDestinatario(DeleteDestinatarioRequest deleteDestinatarioRequest) {
+        public IActionResult DeleteDestinatario(DeleteDestinatarioRequest deleteDestinatarioRequest)
+        {
             int idUtente = 0; //da fare
             var idProprietario = listaDistribuzioneService.GetidProprietario(deleteDestinatarioRequest.idLista);
             if (idProprietario.Equals(idUtente))
             {
-                var rimosso = listaDistribuzioneService.DeleteDestinatario(deleteDestinatarioRequest.idLista, deleteDestinatarioRequest.email);
+                var rimosso = listaUtenzeAssociateService.DeleteDestinatario(deleteDestinatarioRequest.idLista, deleteDestinatarioRequest.email);
                 if (rimosso == null)
                 {
                     return NoContent(); //bad request
@@ -55,8 +56,8 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
                 return NoContent(); //bad Request
             }
 
-                return Ok();
-        }*/
+            return Ok();
+        }
 
     }
     }

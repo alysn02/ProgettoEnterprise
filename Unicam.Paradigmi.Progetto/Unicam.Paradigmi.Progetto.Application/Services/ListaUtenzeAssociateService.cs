@@ -38,12 +38,12 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
             listaUtenzeAssociateRepository.Save();
         }
 
-       /* public bool DeleteDestinatario(int idLista, string email)
+        public bool DeleteDestinatario(int idLista, string email)
         {
             Destinatario destinatario = destinatarioService.GetByEmail(email);
-            listaUtenzeAssociateRepository.DeleteDestinatario(idLista, destinatario);
+            listaUtenzeAssociateRepository.DeleteDestinatario(idLista, destinatario.IdDestinatario);
             return true;
-        }*/
+        }
 
     }
    

@@ -30,14 +30,15 @@ namespace Unicam.Paradigmi.Progetto.Models.Repositories
         {
             return _ctx.Destinatari.Where(x => x.IdDestinatario == idDestinatario).FirstOrDefault();
         }
-            public void DeleteDestinatario(int idLista, int idDestinatario) 
+        public void DeleteDestinatario(int idLista, int idDestinatario)
         {
-            var destinatario = GetDestinatario(idDestinatario); 
-            if(destinatario != null)
+            var destinatario = GetDestinatario(idDestinatario);
+
+            if (destinatario != null)
             {
-                //da fare
-             
+                _ctx.ListaUtenzeAssociate.Remove(_ctx.ListaUtenzeAssociate.Where(a => a.IdDestinatario == destinatario.IdDestinatario).FirstOrDefault());
             }
+            //return errore(?)
         }
 
     }
