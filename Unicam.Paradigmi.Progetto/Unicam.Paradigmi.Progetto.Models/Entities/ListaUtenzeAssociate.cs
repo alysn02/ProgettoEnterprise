@@ -19,5 +19,8 @@ namespace Unicam.Paradigmi.Progetto.Models.Entities
             this.IdListaDistribuzione = idLista;
             this.IdDestinatario = idDestinatario;
         }
+        public ListaUtenzeAssociate()
+        {
+        }
     }
 }

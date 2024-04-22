@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
 using Unicam.Paradigmi.Application.Models.Dtos;
 using Unicam.Paradigmi.Application.Models.Request;
 using Unicam.Paradigmi.Application.Models.Responses;
@@ -43,7 +44,10 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         [Route("messaggioLista")]
         public IActionResult InvioEmail(InvioEmailRequest invioEmailRequest)
         {
-            int idUtente = 0; //da fare
+            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
+            var idUtente = Convert.ToInt32(jwtToken.Claims.First(claim => claim.Type == "IdUtente").Value);
             var idProprietario = _utenzaService.GetidProprietario(invioEmailRequest.IdListaDestinatari);
             if (idProprietario.Equals(idUtente))
             {

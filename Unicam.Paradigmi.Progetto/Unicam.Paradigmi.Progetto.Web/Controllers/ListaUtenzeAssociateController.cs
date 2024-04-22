@@ -1,13 +1,20 @@
 ﻿using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
+using System.IdentityModel.Tokens.Jwt;
 using System.Runtime.InteropServices;
 using Unicam.Paradigmi.Progetto.Application.Models.Request;
 using Unicam.Paradigmi.Progetto.Application.Services;
+using Unicam.Paradigmi.Progetto.Models.Context;
 
 namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ListaUtenzeAssociateController : Controller
     {
        private readonly ListaUtenzeAssociateService listaUtenzeAssociateService;
@@ -21,19 +28,22 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
 
         [HttpPost]
         [Route("newDestinatario")]
-        public  IActionResult AddDestinatario(AddDestinatarioRequest addDestinatariorequest)
+        public IActionResult AddDestinatario(AddDestinatarioRequest addDestinatariorequest)
         {
-            int idUtente = 0; //da fare 
+            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
+            var idUtente = Convert.ToInt32(jwtToken.Claims.First(claim => claim.Type == "IdUtente").Value);
             var idProprietario = listaDistribuzioneService.GetidProprietario(addDestinatariorequest.IdLista);
             if (idProprietario.Equals(idUtente))
             {
-                var aggiunto = listaUtenzeAssociateService.AddDestinatario(idUtente, addDestinatariorequest.Email);
-                if(aggiunto == null)
+                var aggiunto = listaUtenzeAssociateService.AddDestinatario(addDestinatariorequest.IdLista, addDestinatariorequest.Email);
+                if (aggiunto == null)
                 {
                     return NoContent();//badRequest
                 }
             }
-            else { return NoContent();} //badRequest
+            else { return NoContent(); } //badRequest
             return Ok();
         }
 
@@ -41,7 +51,10 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         [Route("deleteDestinatario")]
         public IActionResult DeleteDestinatario(DeleteDestinatarioRequest deleteDestinatarioRequest)
         {
-            int idUtente = 0; //da fare
+            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
+            var idUtente = Convert.ToInt32(jwtToken.Claims.First(claim => claim.Type == "IdUtente").Value);
             var idProprietario = listaDistribuzioneService.GetidProprietario(deleteDestinatarioRequest.idLista);
             if (idProprietario.Equals(idUtente))
             {

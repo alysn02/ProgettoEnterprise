@@ -2,10 +2,10 @@
 {
     public class ListaUtenzeAssociateDto
     {
-        int idListaDistributori {  get; set; }
-        int idDestinatari { get; set; }
+        public int idListaDistributori {  get; set; }
+        public int idDestinatari { get; set; }
 
-        ListaUtenzeAssociateDto(int idListaDistributori, int idDestinatari)
+        public ListaUtenzeAssociateDto(int idListaDistributori, int idDestinatari)
         {
             this.idListaDistributori = idListaDistributori;
             this.idDestinatari = idDestinatari;

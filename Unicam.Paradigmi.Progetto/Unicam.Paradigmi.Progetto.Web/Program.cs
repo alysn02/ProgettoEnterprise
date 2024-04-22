@@ -23,6 +23,11 @@ builder.Services.AddScoped<ListaDistribuzioneRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddWebService(builder.Configuration);
 builder.Services.AddModelServices(builder.Configuration);
+builder.Services.AddScoped<DestinatarioService>();
+builder.Services.AddScoped<ListaUtenzeAssociateService>();
+builder.Services.AddScoped<DestinatarioRepository>();
+builder.Services.AddScoped<ListaUtenzeAssociateRepository>();
+builder.Services.AddScoped<EmailServices>();
 
 var app = builder.Build();
 

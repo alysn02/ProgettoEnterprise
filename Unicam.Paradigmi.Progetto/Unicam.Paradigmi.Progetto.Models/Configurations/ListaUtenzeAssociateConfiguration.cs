@@ -19,7 +19,7 @@ namespace Unicam.Paradigmi.Progetto.Models.Configurations
             //relazione con destinatario
             builder.HasOne(u => u.Destinatario)
                 .WithMany(u => u.ListaUtenzeAssociate)
-                .HasForeignKey(u => u.IdUtente);
+                .HasForeignKey(u => u.IdDestinatario);
 
             //relazione con lista distribuzione
             builder.HasOne(u => u.Lista)

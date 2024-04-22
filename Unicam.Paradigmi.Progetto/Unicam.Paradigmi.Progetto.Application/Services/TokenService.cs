@@ -28,6 +28,9 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
             claims.Add(new Claim(
                 "Email",
                 $"{utente.Email}"));
+            claims.Add(new Claim(
+     "IdUtente",
+     $"{utente.IdUtente}"));
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtAuthOption.Key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

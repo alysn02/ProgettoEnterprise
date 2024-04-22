@@ -21,7 +21,8 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
            Destinatario destinatario = destinatarioService.GetByEmail(email);
             if(destinatario == null){
                 destinatarioService.AddDestinatarioEmail(email);
-                 Crea(idLista, destinatario.IdDestinatario);
+                var dest = destinatarioService.GetByEmail(email);
+                 Crea(idLista, dest.IdDestinatario);
                 return true;
             }
             if(listaUtenzeAssociateRepository.Get(idLista,destinatario.IdDestinatario) == null)

@@ -2,8 +2,8 @@
 {
     public class InvioEmailRequest
     {
-        public int IdListaDestinatari;
-        public string Subject;
-        public string Body;
+        public int IdListaDestinatari { get; set; }
+        public string Subject { get; set; } = string.Empty;
+        public string Body { get; set; } = string.Empty;
     }
 }

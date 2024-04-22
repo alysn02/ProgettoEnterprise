@@ -13,7 +13,7 @@ namespace Unicam.Paradigmi.Progetto.Models.Repositories
     {
         public MydbContext _ctx;
 
-        DestinatarioRepository(MydbContext ctx)
+        public DestinatarioRepository(MydbContext ctx)
         {
             _ctx = ctx;
         }
