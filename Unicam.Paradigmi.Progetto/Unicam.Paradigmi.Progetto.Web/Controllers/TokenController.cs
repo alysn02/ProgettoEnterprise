@@ -6,10 +6,10 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TokenConotroller : Controller
+    public class TokenController : Controller
     {
         private readonly ITokenService _tokenService;
-        public TokenConotroller(ITokenService tokenService)
+        public TokenController(ITokenService tokenService)
         {
             _tokenService = tokenService;
         }

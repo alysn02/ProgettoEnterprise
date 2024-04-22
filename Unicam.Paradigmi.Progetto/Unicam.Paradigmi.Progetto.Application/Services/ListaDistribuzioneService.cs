@@ -19,5 +19,10 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
         {
             return _utenzaRepository.GetIdFromLista(idListaDistribuzione);
         }
+
+        public List<ListaDistribuzione> GetListe(int idUtente, int tpXps,int ps, string? email, out int totalNum)
+        {
+            return _utenzaRepository.GetListe(idUtente, tpXps,  ps, email, out totalNum);
+        }
     }
 }

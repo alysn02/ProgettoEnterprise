@@ -58,7 +58,34 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
                 return Ok();
             }
 
+
             return BadRequest();
+        }
+
+        [HttpPost]
+        [Route("getListe")]
+        public IActionResult GetListeDestinatari(GetListeDestinatariRequest get)
+        {
+            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
+            var idUtente = Convert.ToInt32(jwtToken.Claims.First(claim => claim.Type == "IdUtente").Value);
+
+            int totalNum = 0;
+            var liste = _utenzaService.GetListe(idUtente, get.PageNumber * get.PageSize, get.PageSize, get.Email, out totalNum);
+
+            if (totalNum == 0)
+            {
+                return BadRequest();
+            }
+           // var response = new GetAziendeResponse();
+            var pageFounded = (totalNum / (decimal)get.PageSize);
+          //  response.NumeroPagine = (int)Math.Ceiling(pageFounded);
+          //response.Liste = liste.Select(s =>
+           // new Application.Models.Dtos.ListaUtenzaDto(s)).ToList();
+
+
+            return Ok();
         }
 
     }
