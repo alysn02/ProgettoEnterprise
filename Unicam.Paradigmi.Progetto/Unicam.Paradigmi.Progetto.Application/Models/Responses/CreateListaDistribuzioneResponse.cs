@@ -3,7 +3,7 @@ using Unicam.Paradigmi.Progetto.Application.Models.Dtos;
 
 namespace Unicam.Paradigmi.Progetto.Application.Models.Responses
 {
-    public class CreateListaUtenzaResponse
+    public class CreateListaDistribuzioneResponse
     {
         public ListaUtenzaDto ListaUtenza { get; set; } = null!;
     }

@@ -19,13 +19,14 @@ namespace Unicam.Paradigmi.Progetto.Models.Repositories
         public void Aggiungi(ListaDistribuzione lista)
         {
             _ctx.Set<ListaDistribuzione>().Add(lista);
-            //non traccio i figli 
-            //_ctx.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Added;
         }
-
         public void Save()
         {
             _ctx.SaveChanges();
+        }
+        public ListaDistribuzione GetListaByNome(string nome)
+        {
+            return _ctx.ListeDistribuzioni.FirstOrDefault(x => x.Nome == nome);
         }
         public int GetIdFromLista(int idListaDistribuzione)
         {

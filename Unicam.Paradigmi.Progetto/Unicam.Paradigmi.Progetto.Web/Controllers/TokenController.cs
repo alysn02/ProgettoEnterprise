@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
+using Unicam.Paradigmi.Progetto.Application.Factories;
 using Unicam.Paradigmi.Progetto.Application.Models.Request;
+using Unicam.Paradigmi.Progetto.Application.Services;
 
 namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
@@ -9,17 +11,30 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
     public class TokenController : Controller
     {
         private readonly ITokenService _tokenService;
-        public TokenController(ITokenService tokenService)
+        private readonly UtenteService _utenteService;
+        public TokenController(ITokenService tokenService, UtenteService utenteService)
         {
+            _utenteService = utenteService;
             _tokenService = tokenService;
         }
 
         [HttpPost]
         [Route("newToken")]
-        public IActionResult CreateToken(CreateTokenRequest request)
+        public async Task<IActionResult> CreateTokenAsync(CreateTokenRequest request)
         {
-            var token = _tokenService.CreateToken(request);
-            return Ok(token);
+            if( await _utenteService.GetUtenteByEmailAsync(request.Email) == null) 
+            {
+                return BadRequest(ResponseFactory.WithError("email o password non valide"));
+            }
+
+            var token = await _tokenService.CreateTokenAsync(request);
+
+            if(token == null)
+            {
+                return BadRequest(ResponseFactory.WithError("email o password non valide"));
+            }
+
+            return Ok(ResponseFactory.WithSuccess(token));
         }
     }
 }

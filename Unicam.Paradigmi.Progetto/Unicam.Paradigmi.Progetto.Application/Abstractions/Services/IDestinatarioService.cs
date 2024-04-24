@@ -2,6 +2,6 @@
 {
     public interface IDestinatarioService
     {
-        void AddDestinatarioEmail(string email);
+        Task AddDestinatarioEmailAsync(string email);
     }
 }

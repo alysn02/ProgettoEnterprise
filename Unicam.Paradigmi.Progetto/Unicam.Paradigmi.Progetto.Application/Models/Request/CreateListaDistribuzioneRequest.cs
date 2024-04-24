@@ -2,7 +2,7 @@
 
 namespace Unicam.Paradigmi.Progetto.Application.Models.Request
 {
-    public class CreateListaUtenzaRequest
+    public class CreateListaDistribuzioneRequest
     {
         public string Nome { get; set; } = string.Empty;
         public int IdProprietario { get; set; }

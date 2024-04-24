@@ -21,9 +21,9 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
             _utenteService = utenteService;
         }
 
-        public string CreateToken(CreateTokenRequest request)
+        public async Task<string> CreateTokenAsync(CreateTokenRequest request)
         {
-            var utente = _utenteService.GetUtenteByEmail(request.Email);
+            var utente = await _utenteService.GetUtenteByEmailAsync(request.Email);
             List<Claim> claims = new List<Claim>();
             claims.Add(new Claim(
                 "Email",

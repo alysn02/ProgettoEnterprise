@@ -11,7 +11,7 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
         {
             this.destinatarioRepository = destinatarioRepository;
         }
-        public void AddDestinatarioEmail(string email)
+        public async Task AddDestinatarioEmailAsync(string email)
         {
             destinatarioRepository.Add(new Destinatario
             {
@@ -19,11 +19,11 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
             });
             destinatarioRepository.Save();
         }
-        public Destinatario GetByEmail(string email) 
+        public async Task<Destinatario> GetByEmailAsync(string email) 
         { 
             return destinatarioRepository.GetByEmail(email);
         }
-         public List<Destinatario> GetDestinatari(int idListaDestinatari)
+         public async Task<List<Destinatario>> GetDestinatariAsync(int idListaDestinatari)
         {
             return destinatarioRepository.GetListaDestinatari(idListaDestinatari);
         }

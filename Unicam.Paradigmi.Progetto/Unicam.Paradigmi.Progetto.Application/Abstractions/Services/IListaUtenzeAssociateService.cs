@@ -1,7 +1,9 @@
-﻿namespace Unicam.Paradigmi.Progetto.Application.Abstractions.Services
+﻿using Unicam.Paradigmi.Progetto.Models.Entities;
+
+namespace Unicam.Paradigmi.Progetto.Application.Abstractions.Services
 {
     public interface IListaUtenzeAssociateService
     {
-        public bool AddDestinatario(int idLista, string email);
+        public Task<Destinatario> AddDestinatarioAsync(int idLista, string email);
     }
 }

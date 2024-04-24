@@ -5,7 +5,6 @@ namespace Unicam.Paradigmi.Application.Models.Request
 {
     public class CreateUtenteRequest
     {
-        //[Required(ErrorMessage ="campo ragione sociale obbligatorio")]
         public string Email { get; set; } = string.Empty;
         public string Nome { get; set; } = string.Empty;
         public string Cognome {  get; set; } = string.Empty;

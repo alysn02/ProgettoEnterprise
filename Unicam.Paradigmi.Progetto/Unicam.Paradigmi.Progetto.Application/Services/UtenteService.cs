@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Mvc;
 using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
 using Unicam.Paradigmi.Progetto.Models.Entities;
 using Unicam.Paradigmi.Progetto.Models.Repositories;
@@ -12,15 +13,20 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
         {
             _utenteRepository = utenteRepository;
         }
-        public void AddUtente(Utente utente)
+        public  async Task AddUtenteAsync(Utente utente)
         {
             _utenteRepository.Aggiungi(utente);
             _utenteRepository.Save();
         }
 
-        public Utente GetUtenteByEmail(string email)
+        public async Task<Utente> GetUtenteByEmailAsync(string email)
         {
             return _utenteRepository.GetUtenteByEmail(email);
+        }
+
+        public async Task<Utente> GetUtenteByIdAsync(int idUtente)
+        {
+            return _utenteRepository.GetUtenteById(idUtente);
         }
 
     }

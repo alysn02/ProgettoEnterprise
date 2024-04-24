@@ -16,34 +16,39 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
         }
         
 
-       public bool AddDestinatario(int idLista, string email)
+       public async Task<Destinatario> AddDestinatarioAsync(int idLista, string email)
         {
-           Destinatario destinatario = destinatarioService.GetByEmail(email);
+           Destinatario destinatario = await destinatarioService.GetByEmailAsync(email);
             if(destinatario == null){
-                destinatarioService.AddDestinatarioEmail(email);
-                var dest = destinatarioService.GetByEmail(email);
-                 Crea(idLista, dest.IdDestinatario);
-                return true;
+                await destinatarioService.AddDestinatarioEmailAsync(email);
+                var dest = await destinatarioService.GetByEmailAsync(email);
+                 CreaAsync(idLista, dest.IdDestinatario);
+                return dest;
             }
             if(listaUtenzeAssociateRepository.Get(idLista,destinatario.IdDestinatario) == null)
             {
-                 Crea(idLista, destinatario.IdDestinatario);
-                return true;
+                 CreaAsync(idLista, destinatario.IdDestinatario);
+                return destinatario;
             }
-            return true;
+            return destinatario;
         } 
-        public void Crea(int idLista, int idDestinatario)
+        public void CreaAsync(int idLista, int idDestinatario)
         {
             var lista = new ListaUtenzeAssociate(idLista, idDestinatario);
             listaUtenzeAssociateRepository.Add(lista);
             listaUtenzeAssociateRepository.Save();
         }
 
-        public bool DeleteDestinatario(int idLista, string email)
+        public async Task<bool> DeleteDestinatarioAsync(int idLista, string email)
         {
-            Destinatario destinatario = destinatarioService.GetByEmail(email);
+            Destinatario destinatario = await destinatarioService.GetByEmailAsync(email);
+            if (destinatario != null)
+            {
             listaUtenzeAssociateRepository.DeleteDestinatario(idLista, destinatario.IdDestinatario);
-            return true;
+                return true;
+            }
+            return false;
+
         }
 
     }

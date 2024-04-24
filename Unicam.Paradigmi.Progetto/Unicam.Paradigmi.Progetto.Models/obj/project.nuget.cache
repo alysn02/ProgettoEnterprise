@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V4EdykzgCdWkoK/EWg671DxULddtAs5AO/0BFqbEqcZ9+yModZnjjlcK81otRfLPjydBV2D1SEpBZHwkmgS52A==",
+  "dgSpecHash": "ZHzeh02pb0PccrAPi+BKw0jmI+Hjwu5ugsZHniaCjOREVOb3mKjZzhJZztOoWV2Wls83H2d13u/BhZ53Xu+kRg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Famine\\Desktop\\Nuova cartella (2)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
+  "projectFilePath": "C:\\Users\\Famine\\Desktop\\Nuova cartella (3)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Famine\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Famine\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

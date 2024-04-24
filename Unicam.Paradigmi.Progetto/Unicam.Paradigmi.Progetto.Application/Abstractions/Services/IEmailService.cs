@@ -1,9 +1,10 @@
 ﻿using Microsoft.Graph.Models;
+using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Application.Abstractions.Services
 {
     public interface IEmailService
     {
-        public List<Recipient> SendEmail(string subject, string body, int idListaDestinatari);
+        public Task<List<Destinatario>> SendEmailAsync(string subject, string body, int idListaDestinatari);
     }
 }

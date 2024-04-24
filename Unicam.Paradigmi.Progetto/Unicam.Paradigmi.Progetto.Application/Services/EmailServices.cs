@@ -20,9 +20,9 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
             this.destinatarioService = destinatarioService;
         }
 
-        public List<Recipient> SendEmail(string subject, string body, int idListaDestinatari)
+        public async Task<List<Destinatario>> SendEmailAsync(string subject, string body, int idListaDestinatari)
         {
-            var destinatariEmail = destinatarioService.GetDestinatari(idListaDestinatari);
+            var destinatariEmail = await destinatarioService.GetDestinatariAsync(idListaDestinatari);
 
             List<Recipient> destinatari = new List<Recipient>();
 
@@ -63,7 +63,7 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
 
              client.Users[_emailOption.From]
                 .SendMail.PostAsync(postRequestBody);
-            return destinatari;
+            return destinatariEmail;
         }
     }
 }

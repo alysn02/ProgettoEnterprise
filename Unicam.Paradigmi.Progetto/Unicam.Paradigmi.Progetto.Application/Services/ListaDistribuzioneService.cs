@@ -5,24 +5,29 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
 {
     public class ListaDistribuzioneService
     {
-        private readonly ListaDistribuzioneRepository _utenzaRepository;
-        public ListaDistribuzioneService(ListaDistribuzioneRepository utenzaRepository)
+        private readonly ListaDistribuzioneRepository _listaDistribuzioneRepository;
+        public ListaDistribuzioneService(ListaDistribuzioneRepository listaDistribuzioneRepository)
         {
-            _utenzaRepository = utenzaRepository;
+            _listaDistribuzioneRepository = listaDistribuzioneRepository;
         }
-        public void AddLista(ListaDistribuzione lista)
+        public async Task AddListaAsync(ListaDistribuzione lista)
         {
-            _utenzaRepository.Aggiungi(lista);
-            _utenzaRepository.Save();
+            _listaDistribuzioneRepository.Aggiungi(lista);
+            _listaDistribuzioneRepository.Save();
         }
-        public int GetidProprietario(int idListaDistribuzione)
+        public async Task<int> GetidProprietarioAsync(int idListaDistribuzione)
         {
-            return _utenzaRepository.GetIdFromLista(idListaDistribuzione);
+            return _listaDistribuzioneRepository.GetIdFromLista(idListaDistribuzione);
         }
 
-        public List<ListaDistribuzione> GetListe(int idUtente, int tpXps,int ps, string? email, out int totalNum)
+        public async Task<List<ListaDistribuzione>> GetListeAsync(int idUtente, int tpXps,int ps, string? email, out int totalNum)
         {
-            return _utenzaRepository.GetListe(idUtente, tpXps,  ps, email, out totalNum);
+            return _listaDistribuzioneRepository.GetListe(idUtente, tpXps,  ps, email, out totalNum);
+        }
+
+        public async Task<ListaDistribuzione> GetListaByNomeAsync(string nome)
+        {
+            return _listaDistribuzioneRepository.GetListaByNome(nome);
         }
     }
 }

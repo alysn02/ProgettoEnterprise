@@ -4,6 +4,6 @@ namespace Unicam.Paradigmi.Progetto.Application.Abstractions.Services
 {
     public interface IUtenteService
     {
-        void AddUtente(Utente utente);
+        Task AddUtenteAsync(Utente utente);
     }
 }

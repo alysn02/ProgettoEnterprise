@@ -2,8 +2,8 @@
 
 namespace Unicam.Paradigmi.Progetto.Application.Abstractions.Services
 {
-    public interface IListaUtenzaService
+    public interface IListaDistribuzioneService
     {
-        void AddLista(ListaDistribuzione lista);
+        Task AddListaAsync(ListaDistribuzione lista);
     }
 }

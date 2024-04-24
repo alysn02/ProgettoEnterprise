@@ -4,19 +4,17 @@ using Microsoft.AspNetCore.Mvc;
 using Unicam.Paradigmi.Application.Models.Dtos;
 using Unicam.Paradigmi.Application.Models.Request;
 using Unicam.Paradigmi.Application.Models.Responses;
+using Unicam.Paradigmi.Progetto.Application.Factories;
 using Unicam.Paradigmi.Progetto.Application.Services;
-using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
 
     [ApiController]
     [Route("api/v1/[controller]")]
-    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class UtenteController : ControllerBase
     {
         private readonly UtenteService _utenteService;
-       // List<Utente> utenti = new List<Utente>();
 
         public UtenteController(UtenteService utenteService)
         {
@@ -26,14 +24,17 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
 
         [HttpPost]
         [Route("new")]
-        public IActionResult CreateUtente(CreateUtenteRequest request)
+        public async Task<IActionResult> CreateUtenteAsync(CreateUtenteRequest request)
         {
-            var utente = request.ToEntity();
-            _utenteService.AddUtente(utente);
-
-            var response = new CreateUtenteResponse();
-            response.Utente = new UtenteDto(utente);
-            return Ok();
+            if(await _utenteService.GetUtenteByEmailAsync(request.Email) == null) { 
+                var utente = request.ToEntity();
+                await _utenteService.AddUtenteAsync(utente);
+    
+                var response = new CreateUtenteResponse();
+                response.Utente = new UtenteDto(utente);
+                return Ok(ResponseFactory.WithSuccess(response));
+            }
+            return BadRequest(ResponseFactory.WithError("utente già esistente"));    
         }
     }
 }
