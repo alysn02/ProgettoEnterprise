@@ -1,9 +1,10 @@
-﻿using Unicam.Paradigmi.Progetto.Models.Entities;
+﻿using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
+using Unicam.Paradigmi.Progetto.Models.Entities;
 using Unicam.Paradigmi.Progetto.Models.Repositories;
 
 namespace Unicam.Paradigmi.Progetto.Application.Services
 {
-    public class ListaDistribuzioneService
+    public class ListaDistribuzioneService : IListaDistribuzioneService
     {
         private readonly ListaDistribuzioneRepository _listaDistribuzioneRepository;
         public ListaDistribuzioneService(ListaDistribuzioneRepository listaDistribuzioneRepository)
@@ -12,22 +13,22 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
         }
         public async Task AddListaAsync(ListaDistribuzione lista)
         {
-            _listaDistribuzioneRepository.Aggiungi(lista);
-            _listaDistribuzioneRepository.Save();
+            await _listaDistribuzioneRepository.AggiungiAsync(lista);
+            await _listaDistribuzioneRepository.SaveAsync();
         }
         public async Task<int> GetidProprietarioAsync(int idListaDistribuzione)
         {
-            return _listaDistribuzioneRepository.GetIdFromLista(idListaDistribuzione);
+            return await _listaDistribuzioneRepository.GetIdFromListaAsync(idListaDistribuzione);
         }
 
-        public async Task<List<ListaDistribuzione>> GetListeAsync(int idUtente, int tpXps,int ps, string? email, out int totalNum)
+        public async Task<(List<ListaDistribuzione>,int)> GetListeAsync(int idUtente, int tpXps,int ps, string? email)
         {
-            return _listaDistribuzioneRepository.GetListe(idUtente, tpXps,  ps, email, out totalNum);
+            return await _listaDistribuzioneRepository.GetListeAsync(idUtente, tpXps,  ps, email);
         }
 
         public async Task<ListaDistribuzione> GetListaByNomeAsync(string nome)
         {
-            return _listaDistribuzioneRepository.GetListaByNome(nome);
+            return await _listaDistribuzioneRepository.GetListaByNomeAsync(nome);
         }
     }
 }

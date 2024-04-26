@@ -4,36 +4,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unicam.Paradigmi.Models.Repositories;
 using Unicam.Paradigmi.Progetto.Models.Context;
 using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Models.Repositories
 {
-    public class ListaDistribuzioneRepository
+    public class ListaDistribuzioneRepository : GenericRepository<ListaDistribuzione>
     {
         protected MydbContext _ctx;
-        public ListaDistribuzioneRepository(MydbContext ctx)
+        public ListaDistribuzioneRepository(MydbContext ctx) : base(ctx)
         {
             _ctx = ctx;
         }
-        public void Aggiungi(ListaDistribuzione lista)
+        public async Task<ListaDistribuzione> GetListaByNomeAsync(string nome)
         {
-            _ctx.Set<ListaDistribuzione>().Add(lista);
+            return await _ctx.ListeDistribuzioni.FirstOrDefaultAsync(x => x.Nome == nome);
         }
-        public void Save()
+        public async Task<int> GetIdFromListaAsync(int idListaDistribuzione)
         {
-            _ctx.SaveChanges();
+            var lista = await _ctx.ListeDistribuzioni.FirstAsync(x => x.IdLista == idListaDistribuzione);
+            return  lista.IdProprietario;
         }
-        public ListaDistribuzione GetListaByNome(string nome)
-        {
-            return _ctx.ListeDistribuzioni.FirstOrDefault(x => x.Nome == nome);
-        }
-        public int GetIdFromLista(int idListaDistribuzione)
-        {
-            var lista = _ctx.ListeDistribuzioni.First(x => x.IdLista == idListaDistribuzione);
-            return lista.IdProprietario;
-        }
-        public List<ListaDistribuzione> GetListe(int idUtente, int tpXps, int ps, string? email, out int totalNum)
+        public async Task<(List<ListaDistribuzione>, int)> GetListeAsync(int idUtente, int tpXps, int ps, string? email)
         {
             var liste = _ctx.ListeDistribuzioni.Where(a => a.IdProprietario == idUtente).AsQueryable();
 
@@ -44,14 +37,14 @@ namespace Unicam.Paradigmi.Progetto.Models.Repositories
                
             }
 
-            totalNum = liste.Count();
+            var totalNum = liste.Count();
 
-            return
+            return (await
                 liste
                 .OrderBy(o => o.IdLista)
                 .Skip(tpXps)
                 .Take(ps)
-                .ToList();
+                .ToListAsync(), totalNum);
         }
     }
 }

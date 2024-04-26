@@ -4,6 +4,6 @@ namespace Unicam.Paradigmi.Progetto.Application.Abstractions.Services
 {
     public interface ITokenService
     {
-        Task<string> CreateTokenAsync(CreateTokenRequest request);
+        public Task<string> CreateTokenAsync(CreateTokenRequest request);
     }
 }

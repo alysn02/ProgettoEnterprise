@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Unicam.Paradigmi.Progetto.Models.Context;
+using Unicam.Paradigmi.Progetto.Models.Repositories;
 
 namespace Unicam.Paradigmi.Progetto.Models.Extensions
 {
@@ -15,6 +16,10 @@ namespace Unicam.Paradigmi.Progetto.Models.Extensions
                 conf.UseSqlServer(configuration.GetConnectionString("MydbContext"));
 
             });
+            services.AddScoped<UtenteRepository>();
+            services.AddScoped<ListaDistribuzioneRepository>();
+            services.AddScoped<DestinatarioRepository>();
+            services.AddScoped<ListaUtenzeAssociateRepository>();
             return services;
         }
     }

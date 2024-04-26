@@ -8,11 +8,11 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TokenController : Controller
+    public class TokenController : ControllerBase
     {
         private readonly ITokenService _tokenService;
-        private readonly UtenteService _utenteService;
-        public TokenController(ITokenService tokenService, UtenteService utenteService)
+        private readonly IUtenteService _utenteService;
+        public TokenController(ITokenService tokenService, IUtenteService utenteService)
         {
             _utenteService = utenteService;
             _tokenService = tokenService;

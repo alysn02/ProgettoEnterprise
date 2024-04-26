@@ -4,34 +4,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unicam.Paradigmi.Models.Repositories;
 using Unicam.Paradigmi.Progetto.Models.Context;
 using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Models.Repositories
 {
-    public class DestinatarioRepository
+    public class DestinatarioRepository : GenericRepository<Destinatario>
     {
         public MydbContext _ctx;
 
-        public DestinatarioRepository(MydbContext ctx)
+        public DestinatarioRepository(MydbContext ctx) : base(ctx)
         {
             _ctx = ctx;
         }
-        public void Save()
+        public async Task<Destinatario> GetByEmailAsync(string email)
         {
-            _ctx.SaveChanges();
+            return await _ctx.Destinatari.Where(a => a.Email.ToLower() == email.ToLower()).FirstOrDefaultAsync();
         }
-        public void Add(Destinatario destinatario)
+        public async Task<List<Destinatario>> GetListaDestinatariAsync(int idLista)
         {
-            _ctx.Set<Destinatario>().Add(destinatario);
-        }
-        public Destinatario GetByEmail(string email)
-        {
-            return _ctx.Destinatari.Where(a => a.Email.ToLower() == email.ToLower()).FirstOrDefault();
-        }
-        public List<Destinatario> GetListaDestinatari(int idLista)
-        {
-            var lista = _ctx.Destinatari.Where(a => a.ListaUtenzeAssociate.Any(i => i.IdListaDistribuzione == idLista)).ToList();
+            var lista = await _ctx.Destinatari.Where(a => a.ListaUtenzeAssociate.Any(i => i.IdListaDistribuzione == idLista)).ToListAsync();
             return lista;
         }
     }

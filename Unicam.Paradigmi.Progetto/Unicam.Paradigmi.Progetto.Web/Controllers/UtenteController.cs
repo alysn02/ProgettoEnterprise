@@ -4,9 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Unicam.Paradigmi.Application.Models.Dtos;
 using Unicam.Paradigmi.Application.Models.Request;
 using Unicam.Paradigmi.Application.Models.Responses;
+using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
 using Unicam.Paradigmi.Progetto.Application.Factories;
-using Unicam.Paradigmi.Progetto.Application.Services;
-
 namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
 
@@ -14,9 +13,9 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
     [Route("api/v1/[controller]")]
     public class UtenteController : ControllerBase
     {
-        private readonly UtenteService _utenteService;
+        private readonly IUtenteService _utenteService;
 
-        public UtenteController(UtenteService utenteService)
+        public UtenteController(IUtenteService utenteService)
         {
             _utenteService = utenteService;
         }

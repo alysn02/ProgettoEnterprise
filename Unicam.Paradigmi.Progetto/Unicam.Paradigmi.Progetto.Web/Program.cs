@@ -1,34 +1,14 @@
-
-using Microsoft.EntityFrameworkCore;
-using Unicam.Paradigmi.Progetto.Application.Services;
-using Unicam.Paradigmi.Progetto.Models.Context;
-using Unicam.Paradigmi.Progetto.Models.Repositories;
 using Unicam.Paradigmi.Progetto.Models.Extensions;
-using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
 using Unicam.Paradigmi.Progetto.Web.Extensions;
-
+using Unicam.Paradigmi.Progetto.Application.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<UtenteService>();
-builder.Services.AddScoped<UtenteRepository>();
-builder.Services.AddScoped<ListaDistribuzioneService>();
-builder.Services.AddScoped<ListaDistribuzioneRepository>();
-builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddWebService(builder.Configuration);
+builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddModelServices(builder.Configuration);
-builder.Services.AddScoped<DestinatarioService>();
-builder.Services.AddScoped<ListaUtenzeAssociateService>();
-builder.Services.AddScoped<DestinatarioRepository>();
-builder.Services.AddScoped<ListaUtenzeAssociateRepository>();
-builder.Services.AddScoped<EmailServices>();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

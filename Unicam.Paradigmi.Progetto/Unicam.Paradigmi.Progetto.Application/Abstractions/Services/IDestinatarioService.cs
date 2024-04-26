@@ -1,7 +1,15 @@
-﻿namespace Unicam.Paradigmi.Progetto.Application.Abstractions.Services
+﻿using Unicam.Paradigmi.Progetto.Models.Entities;
+using Unicam.Paradigmi.Progetto.Models.Repositories;
+
+namespace Unicam.Paradigmi.Progetto.Application.Abstractions.Services
 {
     public interface IDestinatarioService
     {
-        Task AddDestinatarioEmailAsync(string email);
-    }
+        public Task AddDestinatarioEmailAsync(string email);
+
+        public Task<Destinatario> GetByEmailAsync(string email);
+
+        public Task<List<Destinatario>> GetDestinatariAsync(int idListaDestinatari);
+    }   
+
 }

@@ -6,27 +6,26 @@ using Microsoft.EntityFrameworkCore;
 using System.Data.Common;
 using System.IdentityModel.Tokens.Jwt;
 using System.Runtime.InteropServices;
+using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
 using Unicam.Paradigmi.Progetto.Application.Factories;
 using Unicam.Paradigmi.Progetto.Application.Models.Dtos;
 using Unicam.Paradigmi.Progetto.Application.Models.Request;
 using Unicam.Paradigmi.Progetto.Application.Models.Responses;
-using Unicam.Paradigmi.Progetto.Application.Services;
-using Unicam.Paradigmi.Progetto.Models.Context;
 
 namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public class ListaUtenzeAssociateController : Controller
+    public class ListaUtenzeAssociateController : ControllerBase
     {
-       private readonly ListaUtenzeAssociateService listaUtenzeAssociateService;
-        private readonly ListaDistribuzioneService listaDistribuzioneService;
+       private readonly IListaUtenzeAssociateService _listaUtenzeAssociateService;
+        private readonly IListaDistribuzioneService _listaDistribuzioneService;
 
-        public ListaUtenzeAssociateController (ListaUtenzeAssociateService listaUtenzeAssociateService, ListaDistribuzioneService listaDistribuzioneService)
+        public ListaUtenzeAssociateController (IListaUtenzeAssociateService listaUtenzeAssociateService, IListaDistribuzioneService listaDistribuzioneService)
         {
-            this.listaUtenzeAssociateService = listaUtenzeAssociateService;
-            this.listaDistribuzioneService = listaDistribuzioneService;
+            this._listaUtenzeAssociateService = listaUtenzeAssociateService;
+            this._listaDistribuzioneService = listaDistribuzioneService;
         }
 
         [HttpPost]
@@ -37,10 +36,10 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
             var tokenHandler = new JwtSecurityTokenHandler();
             var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
             var idUtente = Convert.ToInt32(jwtToken.Claims.First(claim => claim.Type == "IdUtente").Value);
-            var idProprietario = await listaDistribuzioneService.GetidProprietarioAsync(addDestinatariorequest.IdLista);
+            var idProprietario = await _listaDistribuzioneService.GetidProprietarioAsync(addDestinatariorequest.IdLista);
             if (idProprietario.Equals(idUtente))
             {
-                var aggiunto = await listaUtenzeAssociateService.AddDestinatarioAsync(addDestinatariorequest.IdLista, addDestinatariorequest.Email);
+                var aggiunto = await _listaUtenzeAssociateService.AddDestinatarioAsync(addDestinatariorequest.IdLista, addDestinatariorequest.Email);
                 if (aggiunto == null)
                 {
                     return BadRequest(ResponseFactory.WithError("non esiste l'utente da aggiungere"));
@@ -67,10 +66,10 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
             var tokenHandler = new JwtSecurityTokenHandler();
             var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
             var idUtente = Convert.ToInt32(jwtToken.Claims.First(claim => claim.Type == "IdUtente").Value);
-            var idProprietario = await listaDistribuzioneService.GetidProprietarioAsync(deleteDestinatarioRequest.idLista);
+            var idProprietario = await _listaDistribuzioneService.GetidProprietarioAsync(deleteDestinatarioRequest.IdLista);
             if (idProprietario.Equals(idUtente))
             {
-                var rimosso = await listaUtenzeAssociateService.DeleteDestinatarioAsync(deleteDestinatarioRequest.idLista, deleteDestinatarioRequest.email);
+                var rimosso = await _listaUtenzeAssociateService.DeleteDestinatarioAsync(deleteDestinatarioRequest.NomeLista, deleteDestinatarioRequest.Email);
                 if (rimosso == false)
                 {
                     return BadRequest(ResponseFactory.WithError("il destinatario non esiste"));

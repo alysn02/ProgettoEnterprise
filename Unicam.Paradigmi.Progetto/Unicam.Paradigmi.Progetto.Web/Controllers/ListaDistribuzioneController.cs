@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
+using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
 using Unicam.Paradigmi.Progetto.Application.Factories;
 using Unicam.Paradigmi.Progetto.Application.Models.Dtos;
 using Unicam.Paradigmi.Progetto.Application.Models.Request;
 using Unicam.Paradigmi.Progetto.Application.Models.Responses;
-using Unicam.Paradigmi.Progetto.Application.Services;
-using Unicam.Paradigmi.Progetto.Models.Repositories;
+
 
 namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
@@ -17,11 +17,11 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ListaDistribuzioneController : ControllerBase
     {
-        private readonly ListaDistribuzioneService _listaDistribuzioneService;
-        private readonly EmailServices _emailServices;
-        private readonly UtenteService _utenteService;
+        private readonly IListaDistribuzioneService _listaDistribuzioneService;
+        private readonly IEmailService _emailServices;
+        private readonly IUtenteService _utenteService;
 
-        public ListaDistribuzioneController(ListaDistribuzioneService listaDistribuzioneService, EmailServices emailServices, UtenteService utenteService)
+        public ListaDistribuzioneController(IListaDistribuzioneService listaDistribuzioneService, IEmailService emailServices, IUtenteService utenteService)
         {
             _emailServices = emailServices;
             _listaDistribuzioneService = listaDistribuzioneService;
@@ -81,19 +81,18 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
             var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
             var idUtente = Convert.ToInt32(jwtToken.Claims.First(claim => claim.Type == "IdUtente").Value);
 
-            int totalNum = 0;
-            var liste = await _listaDistribuzioneService.GetListeAsync(idUtente, get.PageNumber * get.PageSize, get.PageSize, get.Email, out totalNum);
+            var (liste, totalNum) = await _listaDistribuzioneService.GetListeAsync(idUtente, get.PageNumber * get.PageSize, get.PageSize, get.Email);
 
             if (totalNum == 0)
             {
                 return BadRequest(ResponseFactory.WithError("non ci sono liste per quell'utente"));
             }
-            var response = new GetListeResponse();
             var pageFounded = (totalNum / (decimal)get.PageSize);
-            response.NPagine = (int)Math.Ceiling(pageFounded);
-            response.Liste = liste.Select(s =>
-            new Application.Models.Dtos.ListaUtenzaDto(s)).ToList();
-
+            var response = new GetListeResponse
+            {
+            Liste = liste.Select(s =>
+            new Application.Models.Dtos.ListaUtenzaDto(s)).ToList(),NPagine = (int)Math.Ceiling(pageFounded)
+            };
 
             return Ok(ResponseFactory.WithSuccess(response));
         }

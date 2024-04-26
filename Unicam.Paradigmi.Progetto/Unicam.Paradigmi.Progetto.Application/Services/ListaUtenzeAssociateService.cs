@@ -25,26 +25,26 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
                  CreaAsync(idLista, dest.IdDestinatario);
                 return dest;
             }
-            if(listaUtenzeAssociateRepository.Get(idLista,destinatario.IdDestinatario) == null)
+            if(await listaUtenzeAssociateRepository.GetAsync(idLista,destinatario.IdDestinatario) == null)
             {
                  CreaAsync(idLista, destinatario.IdDestinatario);
                 return destinatario;
             }
             return destinatario;
         } 
-        public void CreaAsync(int idLista, int idDestinatario)
+        public async Task CreaAsync(int idLista, int idDestinatario)
         {
             var lista = new ListaUtenzeAssociate(idLista, idDestinatario);
-            listaUtenzeAssociateRepository.Add(lista);
-            listaUtenzeAssociateRepository.Save();
+            await listaUtenzeAssociateRepository.AggiungiAsync(lista);
+            await listaUtenzeAssociateRepository.SaveAsync();
         }
 
-        public async Task<bool> DeleteDestinatarioAsync(int idLista, string email)
+        public async Task<bool> DeleteDestinatarioAsync(string nomeLista, string email)
         {
             Destinatario destinatario = await destinatarioService.GetByEmailAsync(email);
             if (destinatario != null)
             {
-            listaUtenzeAssociateRepository.DeleteDestinatario(idLista, destinatario.IdDestinatario);
+            await listaUtenzeAssociateRepository.DeleteDestinatarioAsync(nomeLista, destinatario);
                 return true;
             }
             return false;

@@ -13,19 +13,19 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
         }
         public async Task AddDestinatarioEmailAsync(string email)
         {
-            destinatarioRepository.Add(new Destinatario
+            await destinatarioRepository.AggiungiAsync(new Destinatario
             {
                 Email = email
             });
-            destinatarioRepository.Save();
+            await destinatarioRepository.SaveAsync();
         }
         public async Task<Destinatario> GetByEmailAsync(string email) 
         { 
-            return destinatarioRepository.GetByEmail(email);
+            return await destinatarioRepository.GetByEmailAsync(email);
         }
          public async Task<List<Destinatario>> GetDestinatariAsync(int idListaDestinatari)
         {
-            return destinatarioRepository.GetListaDestinatari(idListaDestinatari);
+            return await destinatarioRepository.GetListaDestinatariAsync(idListaDestinatari);
         }
     }
 }

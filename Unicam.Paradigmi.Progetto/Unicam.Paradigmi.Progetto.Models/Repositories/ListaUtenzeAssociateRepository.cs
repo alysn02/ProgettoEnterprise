@@ -1,45 +1,39 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Unicam.Paradigmi.Models.Repositories;
 using Unicam.Paradigmi.Progetto.Models.Context;
 using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Models.Repositories
 {
-    public class ListaUtenzeAssociateRepository
+    public class ListaUtenzeAssociateRepository : GenericRepository<ListaUtenzeAssociate>
     {
         protected MydbContext _ctx;
-        public ListaUtenzeAssociateRepository(MydbContext ctx)
+        private readonly ListaDistribuzioneRepository _listaDistribuzioneRepository;
+        public ListaUtenzeAssociateRepository(MydbContext ctx, ListaDistribuzioneRepository listaDistribuzioneRepository) : base(ctx)
         {
             _ctx = ctx;
+            this._listaDistribuzioneRepository = listaDistribuzioneRepository;
         }
-        public  ListaUtenzeAssociate Get(int idLista,int idDestinatario)
+        public  async Task<ListaUtenzeAssociate> GetAsync(int idLista,int idDestinatario)
         {
 
-            return _ctx.ListaUtenzeAssociate.Where(x => x.IdListaDistribuzione == idLista && x.IdDestinatario == idDestinatario).FirstOrDefault();
+            return await _ctx.ListaUtenzeAssociate.Where(x => x.IdListaDistribuzione == idLista && x.IdDestinatario == idDestinatario).FirstOrDefaultAsync();
         }
-        public void Save()
+        public async Task<Destinatario> GetDestinatarioAsync( int idDestinatario)
         {
-            _ctx.SaveChanges();
-        }
-
-        public void Add(ListaUtenzeAssociate item )
-        {
-            _ctx.Set<ListaUtenzeAssociate>().Add(item);
+            return await _ctx.Destinatari.Where(x => x.IdDestinatario == idDestinatario).FirstOrDefaultAsync();
         }
 
-        public Destinatario GetDestinatario( int idDestinatario)
+        public async Task DeleteDestinatarioAsync(string nomeLista, Destinatario destinatario)
         {
-            return _ctx.Destinatari.Where(x => x.IdDestinatario == idDestinatario).FirstOrDefault();
-        }
-        public void DeleteDestinatario(int idLista, int idDestinatario)
-        {
-            var destinatario = GetDestinatario(idDestinatario);
-
-            if (destinatario != null)
+            var lista = await _listaDistribuzioneRepository.GetListaByNomeAsync(nomeLista);
+            if (lista != null) 
             {
-                _ctx.ListaUtenzeAssociate.Remove(_ctx.ListaUtenzeAssociate.Where(a => a.IdDestinatario == destinatario.IdDestinatario).FirstOrDefault());
+                var id = lista.IdLista;
+            _ctx.ListaUtenzeAssociate.Remove(_ctx.ListaUtenzeAssociate.Where(a => a.IdDestinatario == destinatario.IdDestinatario && a.IdListaDistribuzione == id).FirstOrDefault());
+            await SaveAsync();
             }
-            //return errore(?)
         }
-
     }
+
 }

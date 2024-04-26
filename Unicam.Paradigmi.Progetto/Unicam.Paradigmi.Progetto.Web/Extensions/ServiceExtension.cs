@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Unicam.Paradigmi.Progetto.Web.Extensions
 {
-    public static class ServiceExtension    
+    public static class ServiceExtension
     {
         public static IServiceCollection AddWebService(this IServiceCollection services, IConfiguration configuration)
         {
@@ -70,9 +70,20 @@ namespace Unicam.Paradigmi.Progetto.Web.Extensions
                 }); services.Configure<JWTAuthOption>(
               configuration.GetSection("JwtAuthentication")
               );
+            services.AddOptions(configuration);
 
             return services;
 
+        }
+        private static IServiceCollection AddOptions(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.Configure<JWTAuthOption>(
+                configuration.GetSection("JwtAuthentication")
+                );
+            services.Configure<EmailOption>(
+                configuration.GetSection("EmailOption")
+                );
+            return services;
         }
     }
 }

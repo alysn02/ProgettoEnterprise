@@ -15,18 +15,18 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
         }
         public  async Task AddUtenteAsync(Utente utente)
         {
-            _utenteRepository.Aggiungi(utente);
-            _utenteRepository.Save();
+            await _utenteRepository.AggiungiAsync(utente);
+            await _utenteRepository.SaveAsync();
         }
 
         public async Task<Utente> GetUtenteByEmailAsync(string email)
         {
-            return _utenteRepository.GetUtenteByEmail(email);
+            return await _utenteRepository.GetUtenteByEmailAsync(email);
         }
 
         public async Task<Utente> GetUtenteByIdAsync(int idUtente)
         {
-            return _utenteRepository.GetUtenteById(idUtente);
+            return await _utenteRepository.GetUtenteByIdAsync(idUtente);
         }
 
     }

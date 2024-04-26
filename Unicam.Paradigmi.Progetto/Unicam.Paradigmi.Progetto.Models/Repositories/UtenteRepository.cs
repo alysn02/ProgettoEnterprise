@@ -1,39 +1,30 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unicam.Paradigmi.Models.Repositories;
 using Unicam.Paradigmi.Progetto.Models.Context;
 using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Models.Repositories
 {
-    public class UtenteRepository
+    public class UtenteRepository : GenericRepository <Utente>
     {
         protected MydbContext _ctx;
-        public UtenteRepository(MydbContext ctx)
+        public UtenteRepository(MydbContext ctx) : base(ctx)
         {
             _ctx = ctx;
         }
-        public void Aggiungi(Utente utente)
+        public async Task<Utente> GetUtenteByEmailAsync(string email)
         {
-            _ctx.Set<Utente>().Add(utente);
-           
+            return await _ctx.Utenti.FirstOrDefaultAsync(x => x.Email == email);
         }
 
-        public void Save()
+        public async Task<Utente> GetUtenteByIdAsync(int idUtente)
         {
-            _ctx.SaveChanges();
-        }
-
-        public Utente GetUtenteByEmail(string email)
-        {
-            return _ctx.Utenti.FirstOrDefault(x => x.Email == email);
-        }
-
-        public Utente GetUtenteById(int idUtente)
-        {
-            return _ctx.Utenti.FirstOrDefault(x => x.IdUtente == idUtente);
+            return await _ctx.Utenti.FirstOrDefaultAsync(x => x.IdUtente == idUtente);
         }
     }
 }
