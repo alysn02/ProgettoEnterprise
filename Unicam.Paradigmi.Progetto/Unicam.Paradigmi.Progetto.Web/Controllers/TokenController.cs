@@ -6,6 +6,15 @@ using Unicam.Paradigmi.Progetto.Application.Services;
 
 namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
+    /*
+     * this class is a controller that manages the requests related to the token 
+     * we use the token service to create a new token
+     * 
+     * @param _tokenService: service that manages the token
+     * @param _utenteService: service that manages the user
+     * 
+     * return: the response to the request
+     * **/
     [ApiController]
     [Route("api/[controller]")]
     public class TokenController : ControllerBase
@@ -17,6 +26,14 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
             _utenteService = utenteService;
             _tokenService = tokenService;
         }
+
+        /*
+         * this class manages the request to create a new token.       
+         * We check if the user exists, if it exists we create the token and return the response with the token created
+         * We Use async to make the method asynchronous, so that it can be executed in parallel with other methods
+         * @param request: request to create a new token
+         * return the response to the request
+         **/
 
         [HttpPost]
         [Route("newToken")]

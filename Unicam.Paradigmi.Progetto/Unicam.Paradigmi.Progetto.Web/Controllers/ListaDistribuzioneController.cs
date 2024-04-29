@@ -11,7 +11,12 @@ using Unicam.Paradigmi.Progetto.Application.Models.Responses;
 
 namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
-
+    /*
+     * This class is a controller that manages the requests related to the distribution list
+     * 
+     * @param _listaDistribuzioneService: service that manages the distribution list
+     * return: the response to the request
+     * **/
     [ApiController]
     [Route("api/v1/[controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
@@ -28,6 +33,14 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
             _utenteService = utenteService;
         }
 
+        /*
+         * This method manages the request to create a new distribution list.
+         * We check if the user exists, if it exists we create the list and return the response with the list created
+         * We Use async to make the method asynchronous, so that it can be executed in parallel with other methods
+         * 
+         * @param request: request to create a new distribution list
+         * @return the response to the request
+         * **/
 
         [HttpPost]
         [Route("newLista")]
@@ -49,6 +62,14 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
             return BadRequest(ResponseFactory.WithError("dati forniti non validi"));
         }
 
+
+        /*
+         * This method manages the request to Send Email.
+         * We check if the user is Equals then owner of the list, if it is we send the email and return the response with the email sent
+         * We Use async to make the method asynchronous, so that it can be executed in parallel with other methods
+         * 
+         * @param invioEmailRequest: request to send email
+         * **/
         [HttpPost]
         [Route("messaggioLista")]
         public async Task<IActionResult> InvioEmailAsync(InvioEmailRequest invioEmailRequest)
@@ -72,6 +93,14 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
             return BadRequest(ResponseFactory.WithError("qualcosa è andato storto"));
         }
 
+        /*
+         * This method manages the request to get the list of recipients.
+         * We make the pagination of the list of recipients
+         * We check totalNum if it is 0 we return an error message because there are no lists for that user
+         * 
+         * @param get: request to get the list of recipients
+         * return the response to the request
+         * **/
         [HttpPost]
         [Route("getListe")]
         public async Task<IActionResult> GetListeDestinatariAsync(GetListeDestinatariRequest get)

@@ -14,6 +14,13 @@ using Unicam.Paradigmi.Progetto.Application.Models.Responses;
 
 namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
+    /*
+     * this class is a controller that manages the requests related to the list of users associated with the list
+     * 
+     * @param _listaUtenzeAssociateService: service that manages the list of users associated with the list
+     * @param _listaDistribuzioneService: service that manages the distribution list
+     * return: the response to the request
+     * **/
     [ApiController]
     [Route("api/v1/[controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
@@ -27,6 +34,15 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
             this._listaUtenzeAssociateService = listaUtenzeAssociateService;
             this._listaDistribuzioneService = listaDistribuzioneService;
         }
+
+        /*
+         * this class manages the request to add a new user to the list of users associated with the list.       
+         * We check if the user exists, if it exists we add it to the list of users associated with the list and return the response with the user added
+         * We Use async to make the method asynchronous, so that it can be executed in parallel with other methods
+         *
+         * @param addDestinatariorequest: request to add a new user to the list of users associated with the list
+         * return the response to the request
+         **/
 
         [HttpPost]
         [Route("newDestinatario")]
@@ -57,6 +73,13 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
                 
         }
 
+        /*
+         * this class manages the request to delete a user from the list of users associated with the list.
+         * We check if the user exists, if it exists we delete it from the list of users associated with the list and return the response with the user deleted
+         * 
+         * @param deleteDestinatarioRequest: request to delete a user from the list of users associated with the list
+         * return the response to the request
+         * **/
 
         [HttpDelete]
         [Route("deleteDestinatario")]
