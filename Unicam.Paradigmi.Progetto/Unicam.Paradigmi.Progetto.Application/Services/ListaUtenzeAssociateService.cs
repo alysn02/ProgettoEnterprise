@@ -6,10 +6,10 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
 {
     public class ListaUtenzeAssociateService : IListaUtenzeAssociateService
     {
-        ListaUtenzeAssociateRepository listaUtenzeAssociateRepository;
-        DestinatarioService destinatarioService;
+        private readonly ListaUtenzeAssociateRepository listaUtenzeAssociateRepository;
+        private readonly IDestinatarioService destinatarioService;
 
-        public ListaUtenzeAssociateService(ListaUtenzeAssociateRepository listaUtenzeAssociateRepository, DestinatarioService destinatarioService)
+        public ListaUtenzeAssociateService(ListaUtenzeAssociateRepository listaUtenzeAssociateRepository, IDestinatarioService destinatarioService)
         {
             this.listaUtenzeAssociateRepository = listaUtenzeAssociateRepository;
             this.destinatarioService = destinatarioService;

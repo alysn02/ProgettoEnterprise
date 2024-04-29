@@ -12,9 +12,9 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
     public class EmailServices : IEmailService
     {
         public readonly EmailOption _emailOption;
-        public readonly DestinatarioService destinatarioService;
+        public readonly IDestinatarioService destinatarioService;
 
-        public EmailServices(DestinatarioService destinatarioService, IOptions<EmailOption> emailOption)
+        public EmailServices(IDestinatarioService destinatarioService, IOptions<EmailOption> emailOption)
         {
             this._emailOption = emailOption.Value;
             this.destinatarioService = destinatarioService;

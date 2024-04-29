@@ -10,6 +10,12 @@ using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Models.Repositories
 {
+    /*
+     * This class is a repository that manages the user
+     * 
+     * @param _ctx: context of the database
+     * return: the user
+     * **/
     public class UtenteRepository : GenericRepository <Utente>
     {
         protected MydbContext _ctx;

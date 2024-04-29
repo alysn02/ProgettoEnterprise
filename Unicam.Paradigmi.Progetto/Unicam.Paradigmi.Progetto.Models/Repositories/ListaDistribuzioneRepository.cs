@@ -37,14 +37,15 @@ namespace Unicam.Paradigmi.Progetto.Models.Repositories
                
             }
 
-            var totalNum = liste.Count();
+            var totalNum = await liste.CountAsync(); // Count after applying all filters
+            var filteredList = await liste
+                             .OrderBy(o => o.IdLista)
+                             .Skip(tpXps)
+                             .Take(ps)
+                             .ToListAsync();
 
-            return (await
-                liste
-                .OrderBy(o => o.IdLista)
-                .Skip(tpXps)
-                .Take(ps)
-                .ToListAsync(), totalNum);
+
+            return (filteredList, totalNum);
         }
     }
 }

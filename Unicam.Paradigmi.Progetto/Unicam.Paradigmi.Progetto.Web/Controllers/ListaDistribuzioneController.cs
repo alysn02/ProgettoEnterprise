@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics.Eventing.Reader;
 using System.IdentityModel.Tokens.Jwt;
 using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
 using Unicam.Paradigmi.Progetto.Application.Factories;
@@ -46,18 +47,17 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         [Route("newLista")]
         public async Task<IActionResult> CreateListaAsync(CreateListaDistribuzioneRequest request)
         {
-            if(await _utenteService.GetUtenteByIdAsync(request.IdProprietario) != null)
+            if (await _utenteService.GetUtenteByIdAsync(request.IdProprietario) != null)
             {
-                if(await _listaDistribuzioneService.GetListaByNomeAsync(request.Nome) != null)
+                if (await _listaDistribuzioneService.GetListaByNomeAsync(request.Nome) == null)
                 {
-                var lista = request.ToEntity();
-                await _listaDistribuzioneService.AddListaAsync(lista);
+                    var lista = request.ToEntity();
+                    await _listaDistribuzioneService.AddListaAsync(lista);
 
-                var response = new CreateListaDistribuzioneResponse();
-                response.ListaUtenza = new ListaUtenzaDto(lista);
-                return Ok(ResponseFactory.WithSuccess(response));
+                    var response = new CreateListaDistribuzioneResponse();
+                    response.ListaUtenza = new ListaUtenzaDto(lista);
+                    return Ok(ResponseFactory.WithSuccess(response));
                 }
-
             }
             return BadRequest(ResponseFactory.WithError("dati forniti non validi"));
         }
@@ -119,8 +119,9 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
             var pageFounded = (totalNum / (decimal)get.PageSize);
             var response = new GetListeResponse
             {
-            Liste = liste.Select(s =>
-            new Application.Models.Dtos.ListaUtenzaDto(s)).ToList(),NPagine = (int)Math.Ceiling(pageFounded)
+                Liste = liste.Select(s =>
+                new ListaUtenzaDto(s)).ToList(),
+                NPagine = (int)Math.Ceiling(pageFounded)
             };
 
             return Ok(ResponseFactory.WithSuccess(response));

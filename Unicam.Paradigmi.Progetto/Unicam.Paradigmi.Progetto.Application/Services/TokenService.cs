@@ -13,9 +13,9 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
     public class TokenService : ITokenService
     {
         private readonly JWTAuthOption _jwtAuthOption;
-        private readonly UtenteService _utenteService;
+        private readonly IUtenteService _utenteService;
 
-        public TokenService(IOptions<JWTAuthOption> jwtAuthOption, UtenteService utenteService)
+        public TokenService(IOptions<JWTAuthOption> jwtAuthOption, IUtenteService utenteService)
         {
             _jwtAuthOption = jwtAuthOption.Value;
             _utenteService = utenteService;
