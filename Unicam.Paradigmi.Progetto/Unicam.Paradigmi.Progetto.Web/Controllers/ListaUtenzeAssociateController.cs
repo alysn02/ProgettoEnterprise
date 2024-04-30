@@ -48,10 +48,8 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         [Route("newDestinatario")]
         public async Task<IActionResult> AddDestinatario(AddDestinatarioRequest addDestinatariorequest)
         {
-            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
-            var idUtente = Convert.ToInt32(jwtToken.Claims.First(claim => claim.Type == "IdUtente").Value);
+            var idUtente = (int)HttpContext.Items["IdUtente"];
+
             var idProprietario = await _listaDistribuzioneService.GetidProprietarioAsync(addDestinatariorequest.IdLista);
             if (idProprietario.Equals(idUtente))
             {
@@ -85,10 +83,7 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         [Route("deleteDestinatario")]
         public async Task<IActionResult> DeleteDestinatarioAsync(DeleteDestinatarioRequest deleteDestinatarioRequest)
         {
-            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
-            var idUtente = Convert.ToInt32(jwtToken.Claims.First(claim => claim.Type == "IdUtente").Value);
+            var idUtente = (int)HttpContext.Items["IdUtente"];
             var idProprietario = await _listaDistribuzioneService.GetidProprietarioAsync(deleteDestinatarioRequest.IdLista);
             if (idProprietario.Equals(idUtente))
             {

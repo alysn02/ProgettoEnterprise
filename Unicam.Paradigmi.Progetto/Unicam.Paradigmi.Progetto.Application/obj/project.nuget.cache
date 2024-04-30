@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WwiSqGzPKp6VpqFLfFzPl4HITFFkbOEAI2Nx23wn8Lyuz0Z00f2ihkvb7eJ7HXeR6HXSznjtjm/4ZPgx7p3afQ==",
+  "dgSpecHash": "6YNYYTcMCmwtQDjBi7MOmOjLEDSb+asWulmc2wJuUp3fjO6ZZ7GjynBUTEgmPhJTL4yAOC+c7Ba8yJsYFBoYWg==",
   "success": true,
   "projectFilePath": "C:\\Users\\edott\\OneDrive\\Desktop\\ProgettoEnterprise\\EP3\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj",
   "expectedPackageFiles": [
@@ -51,6 +51,7 @@
     "C:\\Users\\edott\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\edott\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\edott\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\edott\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\edott\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\edott\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\edott\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

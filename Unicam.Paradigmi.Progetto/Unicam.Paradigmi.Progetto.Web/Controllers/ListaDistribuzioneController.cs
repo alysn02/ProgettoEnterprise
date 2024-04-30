@@ -15,6 +15,7 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
     /*
      * This class is a controller that manages the requests related to the distribution list
      * 
+     * @route: the route of the controller is api/v1/[controller] where [controller] is the name of the controller
      * @param _listaDistribuzioneService: service that manages the distribution list
      * return: the response to the request
      * **/
@@ -47,8 +48,10 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         [Route("newLista")]
         public async Task<IActionResult> CreateListaAsync(CreateListaDistribuzioneRequest request)
         {
+
             if (await _utenteService.GetUtenteByIdAsync(request.IdProprietario) != null)
             {
+
                 if (await _listaDistribuzioneService.GetListaByNomeAsync(request.Nome) == null)
                 {
                     var lista = request.ToEntity();
@@ -62,7 +65,6 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
             return BadRequest(ResponseFactory.WithError("dati forniti non validi"));
         }
 
-
         /*
          * This method manages the request to Send Email.
          * We check if the user is Equals then owner of the list, if it is we send the email and return the response with the email sent
@@ -74,10 +76,11 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         [Route("messaggioLista")]
         public async Task<IActionResult> InvioEmailAsync(InvioEmailRequest invioEmailRequest)
         {
-            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
-            var idUtente = Convert.ToInt32(jwtToken.Claims.First(claim => claim.Type == "IdUtente").Value);
+            var idUtente = (int)HttpContext.Items["IdUtente"];
+            //var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            //var tokenHandler = new JwtSecurityTokenHandler();
+            //var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
+            //var idUtente = Convert.ToInt32(jwtToken.Claims.First(claim => claim.Type == "IdUtente").Value);
             var idProprietario = await _listaDistribuzioneService.GetidProprietarioAsync(invioEmailRequest.IdListaDestinatari);
             if (idProprietario.Equals(idUtente))
             {
@@ -105,11 +108,8 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         [Route("getListe")]
         public async Task<IActionResult> GetListeDestinatariAsync(GetListeDestinatariRequest get)
         {
-            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
-            var idUtente = Convert.ToInt32(jwtToken.Claims.First(claim => claim.Type == "IdUtente").Value);
-
+            var idUtente = (int)HttpContext.Items["IdUtente"];
+            
             var (liste, totalNum) = await _listaDistribuzioneService.GetListeAsync(idUtente, get.PageNumber * get.PageSize, get.PageSize, get.Email);
 
             if (totalNum == 0)

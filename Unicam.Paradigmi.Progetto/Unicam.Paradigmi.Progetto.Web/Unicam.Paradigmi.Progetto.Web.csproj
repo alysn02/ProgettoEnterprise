@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Unicam.Paradigmi.Progetto.Application\Unicam.Paradigmi.Progetto.Application.csproj" />
     <ProjectReference Include="..\Unicam.Paradigmi.Progetto.Models\Unicam.Paradigmi.Progetto.Models.csproj" />
   </ItemGroup>

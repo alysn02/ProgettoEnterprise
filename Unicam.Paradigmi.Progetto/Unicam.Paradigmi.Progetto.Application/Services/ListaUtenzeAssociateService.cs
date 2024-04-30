@@ -4,6 +4,14 @@ using Unicam.Paradigmi.Progetto.Models.Repositories;
 
 namespace Unicam.Paradigmi.Progetto.Application.Services
 {
+    /*
+     * This Class implements the IListaUtenzeAssociateService interface.
+     * 
+     * @param listaUtenzeAssociateRepository: The repository of the associated users list.
+     * @param destinatarioService: The service of the recipient.
+     * 
+     * @return The service of the associated users list.
+     * **/
     public class ListaUtenzeAssociateService : IListaUtenzeAssociateService
     {
         private readonly ListaUtenzeAssociateRepository listaUtenzeAssociateRepository;
@@ -15,7 +23,13 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
             this.destinatarioService = destinatarioService;
         }
         
-
+        /*
+         * This Method adds a recipient to the associated users list.
+         * 
+         * @param idLista: The id of the list.
+         * @param email: The email of the recipient.
+         * @return the destinatario with the email.
+         * **/
        public async Task<Destinatario> AddDestinatarioAsync(int idLista, string email)
         {
            Destinatario destinatario = await destinatarioService.GetByEmailAsync(email);
@@ -32,6 +46,13 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
             }
             return destinatario;
         } 
+
+        /*
+         * This Method creates a new associated users list.
+         * @param idLista: The id of the list.
+         * @param idDestinatario: The id of the recipient.
+         * @return the list of associated users.
+         * **/
         public async Task CreaAsync(int idLista, int idDestinatario)
         {
             var lista = new ListaUtenzeAssociate(idLista, idDestinatario);

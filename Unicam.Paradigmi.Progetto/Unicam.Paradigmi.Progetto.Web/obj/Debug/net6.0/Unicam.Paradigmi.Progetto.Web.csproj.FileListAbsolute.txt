@@ -358,3 +358,4 @@ C:\Users\edott\OneDrive\Desktop\ProgettoEnterprise\EP3\Unicam.Paradigmi.Progetto
 C:\Users\edott\OneDrive\Desktop\ProgettoEnterprise\EP3\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Web\obj\Debug\net6.0\Unicam.Paradigmi.Progetto.Web.pdb
 C:\Users\edott\OneDrive\Desktop\ProgettoEnterprise\EP3\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Web\obj\Debug\net6.0\Unicam.Paradigmi.Progetto.Web.genruntimeconfig.cache
 C:\Users\edott\OneDrive\Desktop\ProgettoEnterprise\EP3\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Web\obj\Debug\net6.0\ref\Unicam.Paradigmi.Progetto.Web.dll
+C:\Users\edott\OneDrive\Desktop\ProgettoEnterprise\EP3\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Web\bin\Debug\net6.0\Newtonsoft.Json.dll

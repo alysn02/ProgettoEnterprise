@@ -10,6 +10,14 @@ using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Application.Services
 {
+    /*
+     * This Class is used to create a JWT token for the user.
+     * 
+     * @param _jwtAuthOption: The JWTAuthOption object that contains the JWT key and issuer.
+     * @param _utenteService: The UtenteService object that contains the methods to interact with the Utente entity.
+     * 
+     * @return The JWT token.
+     * **/
     public class TokenService : ITokenService
     {
         private readonly JWTAuthOption _jwtAuthOption;
