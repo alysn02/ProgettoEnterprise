@@ -35,8 +35,8 @@ namespace Unicam.Paradigmi.Progetto.Application.Validators
                .WithMessage("non puo essere nullo")
                .MinimumLength(6)
                .WithMessage("deve essere lunga almeno 6 caratteri")
-               .RegEx("^(?=.[A-Z])(?=.[a-z])(?=.*\\d)(?=.*[!@#$%^&*()_+{}\\[\\]:;<>,.?~\\-]).{6,}$",
-               "il campo deve contenere almeno un carattere speciale, una lettera maiuscola, uno minuscolo");
+               .RegEx("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[!@#$%^&*()_+{}\\[\\]:;<>,.?~\\-]).{6,}$",
+               "La password deve contenere almeno un carattere speciale, una lettera maiuscola, una minuscola e un numero");
         }
     }
 }

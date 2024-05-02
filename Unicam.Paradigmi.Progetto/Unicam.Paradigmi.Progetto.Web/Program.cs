@@ -1,6 +1,7 @@
 using Unicam.Paradigmi.Progetto.Models.Extensions;
 using Unicam.Paradigmi.Progetto.Web.Extensions;
 using Unicam.Paradigmi.Progetto.Application.Extensions;
+using Unicam.Paradigmi.Progetto.Application.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 

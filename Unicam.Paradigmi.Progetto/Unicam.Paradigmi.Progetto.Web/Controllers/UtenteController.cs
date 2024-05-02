@@ -1,11 +1,13 @@
 ﻿
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using Unicam.Paradigmi.Application.Models.Dtos;
 using Unicam.Paradigmi.Application.Models.Request;
 using Unicam.Paradigmi.Application.Models.Responses;
 using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
 using Unicam.Paradigmi.Progetto.Application.Factories;
+using Unicam.Paradigmi.Progetto.Application.Validators;
 
 namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
@@ -40,15 +42,17 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         [Route("new")]
         public async Task<IActionResult> CreateUtenteAsync(CreateUtenteRequest request)
         {
-            if(await _utenteService.GetUtenteByEmailAsync(request.Email) == null) { 
+            if (await _utenteService.GetUtenteByEmailAsync(request.Email) == null)
+            {
                 var utente = request.ToEntity();
                 await _utenteService.AddUtenteAsync(utente);
-    
+
                 var response = new CreateUtenteResponse();
                 response.Utente = new UtenteDto(utente);
                 return Ok(ResponseFactory.WithSuccess(response));
             }
-            return BadRequest(ResponseFactory.WithError("utente già esistente"));    
+            return BadRequest(ResponseFactory.WithError("utente già esistente"));
+
         }
     }
 }

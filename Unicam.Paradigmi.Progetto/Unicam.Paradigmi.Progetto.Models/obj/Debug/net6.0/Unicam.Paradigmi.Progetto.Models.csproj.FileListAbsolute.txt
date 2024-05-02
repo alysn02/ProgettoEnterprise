@@ -63,3 +63,16 @@ C:\Users\edott\OneDrive\Desktop\ProgettoEnterprise\EP3\Unicam.Paradigmi.Progetto
 C:\Users\edott\OneDrive\Desktop\ProgettoEnterprise\EP3\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\refint\Unicam.Paradigmi.Progetto.Models.dll
 C:\Users\edott\OneDrive\Desktop\ProgettoEnterprise\EP3\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\Unicam.Paradigmi.Progetto.Models.pdb
 C:\Users\edott\OneDrive\Desktop\ProgettoEnterprise\EP3\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\ref\Unicam.Paradigmi.Progetto.Models.dll
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\bin\Debug\net6.0\Unicam.Paradigmi.Progetto.Models.deps.json
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\bin\Debug\net6.0\Unicam.Paradigmi.Progetto.Models.dll
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\bin\Debug\net6.0\Unicam.Paradigmi.Progetto.Models.pdb
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\Unicam.Paradigmi.Progetto.Models.csproj.AssemblyReference.cache
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\Unicam.Paradigmi.Progetto.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\Unicam.Paradigmi.Progetto.Models.AssemblyInfoInputs.cache
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\Unicam.Paradigmi.Progetto.Models.AssemblyInfo.cs
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\Unicam.Paradigmi.Progetto.Models.csproj.CoreCompileInputs.cache
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\Unicam.Paradigmi.Progetto.Models.sourcelink.json
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\Unicam.Paradigmi.Progetto.Models.dll
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\refint\Unicam.Paradigmi.Progetto.Models.dll
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\Unicam.Paradigmi.Progetto.Models.pdb
+C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\obj\Debug\net6.0\ref\Unicam.Paradigmi.Progetto.Models.dll

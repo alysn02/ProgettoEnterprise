@@ -13,7 +13,7 @@ namespace Unicam.Paradigmi.Progetto.Web.Extensions
                 app.UseSwaggerUI();
             }
 
-            app.UseMiddleware<ErrorResponseMiddleware>();
+            
             app.UseMiddleware<JwtMiddleware>();
 
             app.UseHttpsRedirection();

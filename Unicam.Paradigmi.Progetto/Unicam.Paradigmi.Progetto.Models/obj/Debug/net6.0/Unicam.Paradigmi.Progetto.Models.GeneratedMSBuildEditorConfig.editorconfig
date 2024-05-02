@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Unicam.Paradigmi.Progetto.Models
-build_property.ProjectDir = C:\Users\Alice\Desktop\SCUOLA\Università\3anno\Paradigmi\Progetto\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\
+build_property.ProjectDir = C:\Users\edott\OneDrive\Desktop\Desktop\UniApp\Enterprise\ProgettoEnterprise\EP4\Unicam.Paradigmi.Progetto\Unicam.Paradigmi.Progetto.Models\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
