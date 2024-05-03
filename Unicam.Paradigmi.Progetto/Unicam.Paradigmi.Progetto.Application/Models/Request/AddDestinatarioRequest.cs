@@ -2,7 +2,7 @@
 {
     public class AddDestinatarioRequest
     {
-        public int IdLista { get; set; }
+        public int IdListaDistribuzione { get; set; }
         public string Email { get; set; } = string.Empty;
     }
 }

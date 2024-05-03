@@ -36,12 +36,12 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
             if(destinatario == null){
                 await destinatarioService.AddDestinatarioEmailAsync(email);
                 var dest = await destinatarioService.GetByEmailAsync(email);
-                 CreaAsync(idLista, dest.IdDestinatario);
+                await CreaAsync(idLista, dest.IdDestinatario);
                 return dest;
             }
             if(await listaUtenzeAssociateRepository.GetAsync(idLista,destinatario.IdDestinatario) == null)
             {
-                 CreaAsync(idLista, destinatario.IdDestinatario);
+                 await CreaAsync(idLista, destinatario.IdDestinatario);
                 return destinatario;
             }
             return destinatario;
@@ -55,7 +55,10 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
          * **/
         public async Task CreaAsync(int idLista, int idDestinatario)
         {
-            var lista = new ListaUtenzeAssociate(idLista, idDestinatario);
+            var lista = new ListaUtenzeAssociate{
+                IdListaDistribuzione = idLista,
+                IdDestinatario =idDestinatario  
+            };
             await listaUtenzeAssociateRepository.AggiungiAsync(lista);
             await listaUtenzeAssociateRepository.SaveAsync();
         }

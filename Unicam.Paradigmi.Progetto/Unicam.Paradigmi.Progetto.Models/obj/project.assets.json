@@ -6979,23 +6979,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\edott\\.nuget\\packages\\": {},
+    "C:\\Users\\Alice\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edott\\OneDrive\\Desktop\\Desktop\\UniApp\\Enterprise\\ProgettoEnterprise\\EP4\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
+      "projectUniqueName": "C:\\Users\\Alice\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
       "projectName": "Unicam.Paradigmi.Progetto.Models",
-      "projectPath": "C:\\Users\\edott\\OneDrive\\Desktop\\Desktop\\UniApp\\Enterprise\\ProgettoEnterprise\\EP4\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
-      "packagesPath": "C:\\Users\\edott\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edott\\OneDrive\\Desktop\\Desktop\\UniApp\\Enterprise\\ProgettoEnterprise\\EP4\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\obj\\",
+      "projectPath": "C:\\Users\\Alice\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
+      "packagesPath": "C:\\Users\\Alice\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Alice\\Source\\Repos\\ProgettoEnterprise\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\edott\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alice\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7017,11 +7017,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -7061,7 +7056,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

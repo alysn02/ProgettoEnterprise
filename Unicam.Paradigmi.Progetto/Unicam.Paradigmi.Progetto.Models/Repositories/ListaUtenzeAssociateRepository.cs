@@ -12,7 +12,7 @@ namespace Unicam.Paradigmi.Progetto.Models.Repositories
         public ListaUtenzeAssociateRepository(MydbContext ctx, ListaDistribuzioneRepository listaDistribuzioneRepository) : base(ctx)
         {
             _ctx = ctx;
-            this._listaDistribuzioneRepository = listaDistribuzioneRepository;
+            _listaDistribuzioneRepository = listaDistribuzioneRepository;
         }
         public  async Task<ListaUtenzeAssociate> GetAsync(int idLista,int idDestinatario)
         {

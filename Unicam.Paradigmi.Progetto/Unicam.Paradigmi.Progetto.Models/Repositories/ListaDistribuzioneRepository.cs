@@ -47,16 +47,16 @@ namespace Unicam.Paradigmi.Progetto.Models.Repositories
             if (!string.IsNullOrEmpty(email))
             {
                 liste = liste.Include(l => l.EmailDestinatarie).
-                    Where(w => w.EmailDestinatarie.Any(d => d.Destinatario.Email.ToLower().Contains(email.ToLower())));
+                    Where(w => w.EmailDestinatarie.Any(d => d.Destinatario.Email.ToLower()==(email)));
             }
 
-            var totalNum = await liste.CountAsync();
-            var filteredList = await liste
+            
+            var filteredList =await  liste
                              .OrderBy(o => o.IdLista)
                              .Skip(tpXps)
                              .Take(ps)
                              .ToListAsync();
-
+            var totalNum = await liste.CountAsync();
 
             return (filteredList, totalNum);
         }

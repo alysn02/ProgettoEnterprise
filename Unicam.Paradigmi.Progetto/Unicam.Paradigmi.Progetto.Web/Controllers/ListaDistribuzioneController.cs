@@ -108,7 +108,7 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         [Route("getListe")]
         public async Task<IActionResult> GetListeDestinatariAsync(GetListeDestinatariRequest get)
         {
-            var idUtente = (int)HttpContext.Items["IdUtente"];
+            var idUtente = Convert.ToInt32(HttpContext.Items["IdUtente"]);
             
             var (liste, totalNum) = await _listaDistribuzioneService.GetListeAsync(idUtente, get.PageNumber * get.PageSize, get.PageSize, get.Email);
 

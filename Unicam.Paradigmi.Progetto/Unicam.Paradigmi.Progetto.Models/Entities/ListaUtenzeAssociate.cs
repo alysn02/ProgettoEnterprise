@@ -14,13 +14,6 @@ namespace Unicam.Paradigmi.Progetto.Models.Entities
         public ListaDistribuzione Lista { get; set; } = null!;
         public Destinatario Destinatario { get; set; } = null!;
 
-        public ListaUtenzeAssociate (int idLista, int idDestinatario)
-        {
-            this.IdListaDistribuzione = idLista;
-            this.IdDestinatario = idDestinatario;
-        }
-        public ListaUtenzeAssociate()
-        {
-        }
+      
     }
 }

@@ -5,7 +5,8 @@ namespace Unicam.Paradigmi.Progetto.Application.Models.Responses
 {
     public class GetListeResponse
     {
-        public int NPagine { get; set; }
+        
         public List<ListaUtenzaDto> Liste { get; set; } = new List<ListaUtenzaDto>();
+        public int NPagine { get; set; }
     }
 }

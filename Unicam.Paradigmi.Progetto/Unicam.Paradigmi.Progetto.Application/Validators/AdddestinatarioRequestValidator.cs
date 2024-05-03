@@ -7,7 +7,7 @@ namespace Unicam.Paradigmi.Progetto.Application.Validators
     {
         public AddDestinatarioRequestValidator()
         {
-            RuleFor(x => x.IdLista).NotEmpty().WithMessage("id non valido");
+            RuleFor(x => x.IdListaDistribuzione).NotEmpty().WithMessage("id non valido");
             RuleFor(x => x.Email).NotEmpty().WithMessage("Email non può essere vuota");
             RuleFor(x => x.Email).EmailAddress().WithMessage("Email non è valida");
         }

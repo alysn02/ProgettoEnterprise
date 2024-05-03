@@ -46,14 +46,14 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
 
         [HttpPost]
         [Route("newDestinatario")]
-        public async Task<IActionResult> AddDestinatario(AddDestinatarioRequest addDestinatariorequest)
+        public async Task<IActionResult> AddDestinatarioAsync(AddDestinatarioRequest addDestinatariorequest)
         {
-            var idUtente = (int)HttpContext.Items["IdUtente"];
+            var idUtente = Convert.ToInt32(HttpContext.Items["IdUtente"]);
 
-            var idProprietario = await _listaDistribuzioneService.GetidProprietarioAsync(addDestinatariorequest.IdLista);
+            var idProprietario = await _listaDistribuzioneService.GetidProprietarioAsync(addDestinatariorequest.IdListaDistribuzione);
             if (idProprietario.Equals(idUtente))
             {
-                var aggiunto = await _listaUtenzeAssociateService.AddDestinatarioAsync(addDestinatariorequest.IdLista, addDestinatariorequest.Email);
+                var aggiunto = await _listaUtenzeAssociateService.AddDestinatarioAsync(addDestinatariorequest.IdListaDistribuzione, addDestinatariorequest.Email);
                 if (aggiunto == null)
                 {
                     return BadRequest(ResponseFactory.WithError("non esiste l'utente da aggiungere"));

@@ -2,13 +2,13 @@
 {
     public class ListaUtenzeAssociateDto
     {
-        public int idListaDistributori {  get; set; }
-        public int idDestinatari { get; set; }
+        public int IdListaDistributori {  get; set; }
+        public int IdDestinatari { get; set; }
 
         public ListaUtenzeAssociateDto(int idListaDistributori, int idDestinatari)
         {
-            this.idListaDistributori = idListaDistributori;
-            this.idDestinatari = idDestinatari;
+            this.IdListaDistributori = idListaDistributori;
+            this.IdDestinatari = idDestinatari;
         }
     }
 }

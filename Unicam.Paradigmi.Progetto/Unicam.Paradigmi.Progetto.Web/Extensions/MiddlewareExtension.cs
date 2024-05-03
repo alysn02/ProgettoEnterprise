@@ -14,12 +14,13 @@ namespace Unicam.Paradigmi.Progetto.Web.Extensions
             }
 
             
-            app.UseMiddleware<JwtMiddleware>();
+          
 
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();
+            app.UseMiddleware<JwtMiddleware>();
             return app;
         }
     }
