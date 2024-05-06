@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics.Eventing.Reader;
-using System.IdentityModel.Tokens.Jwt;
 using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
 using Unicam.Paradigmi.Progetto.Application.Factories;
 using Unicam.Paradigmi.Progetto.Application.Models.Dtos;
@@ -108,9 +106,9 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         [Route("getListe")]
         public async Task<IActionResult> GetListeDestinatariAsync(GetListeDestinatariRequest get)
         {
-            var idUtente = Convert.ToInt32(HttpContext.Items["IdUtente"]);
-            
-            var (liste, totalNum) = await _listaDistribuzioneService.GetListeAsync(idUtente, get.PageNumber * get.PageSize, get.PageSize, get.Email);
+            var idUtente = (int)HttpContext.Items["IdUtente"];
+
+            var (liste, totalNum) = await _listaDistribuzioneService.GetListeAsync(idUtente, (get.PageNumber-1) * get.PageSize, get.PageSize, get.Email);
 
             if (totalNum == 0)
             {

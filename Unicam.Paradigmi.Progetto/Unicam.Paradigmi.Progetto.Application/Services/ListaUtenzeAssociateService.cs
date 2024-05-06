@@ -16,11 +16,13 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
     {
         private readonly ListaUtenzeAssociateRepository listaUtenzeAssociateRepository;
         private readonly IDestinatarioService destinatarioService;
+        private readonly IListaDistribuzioneService distribuzioneService;
 
-        public ListaUtenzeAssociateService(ListaUtenzeAssociateRepository listaUtenzeAssociateRepository, IDestinatarioService destinatarioService)
+        public ListaUtenzeAssociateService(ListaUtenzeAssociateRepository listaUtenzeAssociateRepository, IDestinatarioService destinatarioService, IListaDistribuzioneService listaDistribuzioneService)
         {
             this.listaUtenzeAssociateRepository = listaUtenzeAssociateRepository;
             this.destinatarioService = destinatarioService;
+            this.distribuzioneService = listaDistribuzioneService;
         }
         
         /*
@@ -66,15 +68,17 @@ namespace Unicam.Paradigmi.Progetto.Application.Services
         public async Task<bool> DeleteDestinatarioAsync(string nomeLista, string email)
         {
             Destinatario destinatario = await destinatarioService.GetByEmailAsync(email);
-            if (destinatario != null)
+            if (destinatario != null) 
             {
-            await listaUtenzeAssociateRepository.DeleteDestinatarioAsync(nomeLista, destinatario);
-                return true;
+                var lista = await distribuzioneService.GetListaByNomeAsync(nomeLista);
+                if (lista != null)
+                {
+                    await listaUtenzeAssociateRepository.DeleteDestinatarioAsync(nomeLista, destinatario);
+                    return true;
+                }
             }
-            return false;
-
-        }
-
+        return false;
+        } 
     }
    
 }

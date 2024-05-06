@@ -10,7 +10,7 @@ namespace Unicam.Paradigmi.Progetto.Application.Validators
             RuleFor(request => request.PageSize).GreaterThan(0).WithMessage("Errore nella dimensione della pagina")
                 .NotEmpty().WithMessage("Non può essere vuoto").NotNull().WithMessage("Non può essere nullo");
 
-            RuleFor(request => request.PageNumber).GreaterThanOrEqualTo(0).WithMessage("Errore nel numero di pagina")
+            RuleFor(request => request.PageNumber).GreaterThan(0).WithMessage("Errore nel numero di pagina")
                 .NotEmpty().WithMessage("Non può essere vuoto").NotNull().WithMessage("Non può essere nullo");
 
             RuleFor(request => request.Email).EmailAddress().WithMessage("Errore nell'inserimento della mail")

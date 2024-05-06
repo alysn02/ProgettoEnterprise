@@ -2,10 +2,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Data.Common;
-using System.IdentityModel.Tokens.Jwt;
-using System.Runtime.InteropServices;
 using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
 using Unicam.Paradigmi.Progetto.Application.Factories;
 using Unicam.Paradigmi.Progetto.Application.Models.Dtos;
@@ -48,7 +44,7 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         [Route("newDestinatario")]
         public async Task<IActionResult> AddDestinatarioAsync(AddDestinatarioRequest addDestinatariorequest)
         {
-            var idUtente = Convert.ToInt32(HttpContext.Items["IdUtente"]);
+            var idUtente = (int)HttpContext.Items["IdUtente"];
 
             var idProprietario = await _listaDistribuzioneService.GetidProprietarioAsync(addDestinatariorequest.IdListaDistribuzione);
             if (idProprietario.Equals(idUtente))
@@ -90,7 +86,7 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
                 var rimosso = await _listaUtenzeAssociateService.DeleteDestinatarioAsync(deleteDestinatarioRequest.NomeLista, deleteDestinatarioRequest.Email);
                 if (rimosso == false)
                 {
-                    return BadRequest(ResponseFactory.WithError("il destinatario non esiste"));
+                    return BadRequest(ResponseFactory.WithError("dati inseriti non validi"));
                 }
             }
             else
