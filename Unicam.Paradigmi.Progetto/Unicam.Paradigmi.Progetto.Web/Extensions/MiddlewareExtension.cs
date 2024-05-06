@@ -13,10 +13,6 @@ namespace Unicam.Paradigmi.Progetto.Web.Extensions
                 app.UseSwaggerUI();
             }
 
-            
-          
-
-            app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();

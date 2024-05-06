@@ -1,6 +1,4 @@
-﻿using Unicam.Paradigmi.Progetto.Application.Services;
-using Unicam.Paradigmi.Progetto.Models.Entities;
-using Unicam.Paradigmi.Progetto.Models.Repositories;
+﻿using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Application.Abstractions.Services
 {

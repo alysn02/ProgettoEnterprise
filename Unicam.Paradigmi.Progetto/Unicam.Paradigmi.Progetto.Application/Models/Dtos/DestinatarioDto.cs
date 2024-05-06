@@ -10,6 +10,5 @@ namespace Unicam.Paradigmi.Progetto.Application.Models.Dtos
             this.Email = destinatario.Email;
             }
 
-      
     }
 }

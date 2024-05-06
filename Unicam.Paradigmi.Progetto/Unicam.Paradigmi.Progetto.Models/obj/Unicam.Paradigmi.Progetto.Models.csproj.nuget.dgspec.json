@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Famine\\Desktop\\Nuova cartella (5)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {}
+    "C:\\Users\\Alice\\Desktop\\finale2\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Famine\\Desktop\\Nuova cartella (5)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {
+    "C:\\Users\\Alice\\Desktop\\finale2\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Famine\\Desktop\\Nuova cartella (5)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Alice\\Desktop\\finale2\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
         "projectName": "Unicam.Paradigmi.Progetto.Models",
-        "projectPath": "C:\\Users\\Famine\\Desktop\\Nuova cartella (5)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
-        "packagesPath": "C:\\Users\\Famine\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Famine\\Desktop\\Nuova cartella (5)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\obj\\",
+        "projectPath": "C:\\Users\\Alice\\Desktop\\finale2\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
+        "packagesPath": "C:\\Users\\Alice\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alice\\Desktop\\finale2\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Famine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alice\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,11 +39,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

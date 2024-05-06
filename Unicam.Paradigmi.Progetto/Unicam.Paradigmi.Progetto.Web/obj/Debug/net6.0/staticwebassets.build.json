@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "f5y8T6xWdeZtyxdYD1le1Io4Tg5funvFrDn98iJ3+5w=",
+  "Hash": "Vh8gajDIEzPaHNlxL+TajEkkZNp2JTlvbSvEhPNqfHY=",
   "Source": "Unicam.Paradigmi.Progetto.Web",
   "BasePath": "_content/Unicam.Paradigmi.Progetto.Web",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\Famine\\Desktop\\Nuova cartella (4)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj",
+      "Identity": "C:\\Users\\Alice\\Desktop\\finale2\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Application\\Unicam.Paradigmi.Progetto.Application.csproj",
       "Version": 2,
       "Source": "Unicam.Paradigmi.Progetto.Application",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",

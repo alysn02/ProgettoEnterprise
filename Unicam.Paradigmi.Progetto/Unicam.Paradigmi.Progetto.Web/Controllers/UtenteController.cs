@@ -1,7 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
 using Unicam.Paradigmi.Application.Models.Dtos;
 using Unicam.Paradigmi.Application.Models.Request;
 using Unicam.Paradigmi.Application.Models.Responses;

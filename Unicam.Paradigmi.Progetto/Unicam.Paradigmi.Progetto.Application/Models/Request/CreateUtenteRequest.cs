@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Unicam.Paradigmi.Progetto.Models.Entities;
+﻿using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Application.Models.Request
 {

@@ -1,5 +1,4 @@
-﻿using Microsoft.Graph.Models;
-using Unicam.Paradigmi.Progetto.Models.Entities;
+﻿using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Application.Abstractions.Services
 {

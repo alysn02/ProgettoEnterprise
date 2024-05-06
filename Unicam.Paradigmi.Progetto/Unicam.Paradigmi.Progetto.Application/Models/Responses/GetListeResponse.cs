@@ -1,5 +1,4 @@
 ﻿using Unicam.Paradigmi.Progetto.Application.Models.Dtos;
-using Unicam.Paradigmi.Progetto.Models.Entities;
 
 namespace Unicam.Paradigmi.Progetto.Application.Models.Responses
 {

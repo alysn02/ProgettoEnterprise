@@ -1,5 +1,4 @@
 ﻿using Unicam.Paradigmi.Progetto.Models.Entities;
-using Unicam.Paradigmi.Progetto.Models.Repositories;
 
 namespace Unicam.Paradigmi.Progetto.Application.Abstractions.Services
 {

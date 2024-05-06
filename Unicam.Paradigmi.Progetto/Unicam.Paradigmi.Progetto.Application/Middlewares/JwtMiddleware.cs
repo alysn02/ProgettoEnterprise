@@ -1,5 +1,4 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
-using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
 
 namespace Unicam.Paradigmi.Progetto.Application.Middlewares
 {

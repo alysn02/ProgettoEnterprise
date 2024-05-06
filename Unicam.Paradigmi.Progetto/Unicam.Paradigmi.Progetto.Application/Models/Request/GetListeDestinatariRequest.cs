@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace Unicam.Paradigmi.Progetto.Application.Models.Request
+﻿namespace Unicam.Paradigmi.Progetto.Application.Models.Request
 {
     public class GetListeDestinatariRequest
     {
