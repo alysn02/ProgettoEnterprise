@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Famine\\Desktop\\Nuova cartella (4)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {}
+    "C:\\Users\\Famine\\Desktop\\Nuova cartella (5)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Famine\\Desktop\\Nuova cartella (4)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {
+    "C:\\Users\\Famine\\Desktop\\Nuova cartella (5)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Famine\\Desktop\\Nuova cartella (4)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Famine\\Desktop\\Nuova cartella (5)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
         "projectName": "Unicam.Paradigmi.Progetto.Models",
-        "projectPath": "C:\\Users\\Famine\\Desktop\\Nuova cartella (4)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
+        "projectPath": "C:\\Users\\Famine\\Desktop\\Nuova cartella (5)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\Unicam.Paradigmi.Progetto.Models.csproj",
         "packagesPath": "C:\\Users\\Famine\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Famine\\Desktop\\Nuova cartella (4)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\obj\\",
+        "outputPath": "C:\\Users\\Famine\\Desktop\\Nuova cartella (5)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Famine\\AppData\\Roaming\\NuGet\\NuGet.Config",

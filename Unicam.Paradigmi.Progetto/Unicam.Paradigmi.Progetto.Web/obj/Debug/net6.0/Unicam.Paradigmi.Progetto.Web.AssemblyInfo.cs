@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Unicam.Paradigmi.Progetto.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9109a06e187754953bea5c541c5ad91487b8469c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a7e6d5e04d32357b17b973410bf32c6509be078")]
 [assembly: System.Reflection.AssemblyProductAttribute("Unicam.Paradigmi.Progetto.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Unicam.Paradigmi.Progetto.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

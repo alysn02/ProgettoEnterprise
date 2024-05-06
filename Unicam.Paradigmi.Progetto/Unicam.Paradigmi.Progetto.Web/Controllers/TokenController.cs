@@ -2,7 +2,6 @@
 using Unicam.Paradigmi.Progetto.Application.Abstractions.Services;
 using Unicam.Paradigmi.Progetto.Application.Factories;
 using Unicam.Paradigmi.Progetto.Application.Models.Request;
-using Unicam.Paradigmi.Progetto.Application.Services;
 
 namespace Unicam.Paradigmi.Progetto.Web.Controllers
 {
@@ -41,16 +40,14 @@ namespace Unicam.Paradigmi.Progetto.Web.Controllers
         {
             if( await _utenteService.GetUtenteByEmailAsync(request.Email) == null) 
             {
-                //return BadRequest(ResponseFactory.WithError("email o password non valide"));
-                throw new InvalidOperationException("email o password non valide");
+                return BadRequest(ResponseFactory.WithError(new InvalidOperationException("email o password non valide")));
             }
 
             var token = await _tokenService.CreateTokenAsync(request);
 
             if(token == null)
             {
-                //return BadRequest(ResponseFactory.WithError("email o password non valide"));
-                throw new InvalidOperationException("token nullo");
+                return BadRequest(ResponseFactory.WithError(new InvalidOperationException("token nullo")));
             }
 
             return Ok(ResponseFactory.WithSuccess(token));

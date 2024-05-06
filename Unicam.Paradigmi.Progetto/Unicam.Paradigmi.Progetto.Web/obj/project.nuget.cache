@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tfLYSQPWRpoR+Za0bRu7vA1Sqs0zSPtDoKC+L6XIQP1u54+4A5tKyCO1rtcz1RXUCfUQ1EX9bNSyrUJDxs3OTA==",
+  "dgSpecHash": "skGTCuxD3LAYgSbXFm7jOrbyHp4SPHykn9Vg40wlPfbzR119gXL9aL6AHUZTr+u0iZnr2va0Nvgwwl1BqBow4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Famine\\Desktop\\Nuova cartella (4)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Web\\Unicam.Paradigmi.Progetto.Web.csproj",
+  "projectFilePath": "C:\\Users\\Famine\\Desktop\\Nuova cartella (5)\\Unicam.Paradigmi.Progetto\\Unicam.Paradigmi.Progetto.Web\\Unicam.Paradigmi.Progetto.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Famine\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Famine\\.nuget\\packages\\azure.identity\\1.11.0\\azure.identity.1.11.0.nupkg.sha512",
